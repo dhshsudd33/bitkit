@@ -157,6 +157,8 @@ export const backpackStore = async (
 	try {
 		const client = await clientFactory();
 
+		alert(`STORE: ${backup.slice(0, 20)}`);
+
 		await client.store(serverInfo, backup);
 
 		return ok('Stored successfully');
@@ -180,6 +182,8 @@ export const backpackRetrieve = async (
 		if (auth) {
 			await saveAuthDetails(auth);
 		}
+
+		alert(`RETRIEVED: ${res.slice(0, 20)}`);
 
 		return ok(res);
 	} catch (e) {
