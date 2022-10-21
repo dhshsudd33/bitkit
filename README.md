@@ -33,3 +33,8 @@ yarn ios
 #or
 yarn android
 ```
+
+
+# Security Disclosures
+Bitkit developers take security very seriously, if you find critical bugs within Bitkitt please report them to support@synonym.to
+Thank you
