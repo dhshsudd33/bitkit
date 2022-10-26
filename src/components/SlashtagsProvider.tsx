@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import SDK from '@synonymdev/slashtags-sdk';
 import { createContext } from 'react';
 import { useSelector } from 'react-redux';
-import RAWSFactory from 'random-access-web-storage';
 import b4a from 'b4a';
+// @ts-ignore
+import rarn from 'random-access-react-native'
 
-import { storage as mmkv } from '../store/mmkv-storage';
 import { IContactRecord } from '../store/types/slashtags';
 import { getSlashtagsPrimaryKey } from '../utils/wallet';
 import {
@@ -15,18 +15,6 @@ import {
 } from '../utils/slashtags';
 import Store from '../store/types';
 import { updateSeederMaybe } from '../store/actions/slashtags';
-
-export const RAWS = RAWSFactory({
-	setItem: (key: string, value: string) => {
-		mmkv.set(key, value);
-	},
-	getItem: (key: string) => {
-		return mmkv.getString(key);
-	},
-	removeItem: (key: string) => {
-		mmkv.delete(key);
-	},
-});
 
 export interface ISlashtagsContext {
 	sdk: SDK;
@@ -93,7 +81,7 @@ export const SlashtagsProvider = ({ children }): JSX.Element => {
 				primaryKey: pk,
 				// TODO(slashtags): replace it with non-blocking storage,
 				// like random access react native after m1 support. or react-native-fs?
-				storage: RAWS,
+				storage: rarn,
 				// TODO(slashtags): add settings to customize this relay or use native
 				relay,
 			});

@@ -9209,6 +9209,21 @@ random-access-memory@^5.0.1:
     is-options "^1.0.2"
     random-access-storage "^2.2.1"
 
+random-access-react-native@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/random-access-react-native/-/random-access-react-native-0.3.0.tgz#231e3221399bb5b6bdce82b901640cf620953f51"
+  integrity sha512-YN83O15nMCKOkeo8ojNKfdS+7CLvNSkcfl20ehGdr0UnIsenn4WaWtN1qpLkUiRZCzIdE3UQfA6744gs4nHcTg==
+  dependencies:
+    random-access-storage "^2.0.1"
+
+random-access-storage@^2.0.1:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/random-access-storage/-/random-access-storage-2.3.0.tgz#18bfd70407e2e8c42d941ecbe7016256b78912da"
+  integrity sha512-+sGRoANV5/g+JuHXNmML7F+fm7zM2MkXOOmBDCSM2C5ov35fSyQYCQ3My/hxe1jkmSp6pyAeGW3jA2iC0rfZ4g==
+  dependencies:
+    events "^3.3.0"
+    queue-tick "^1.0.0"
+
 random-access-storage@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/random-access-storage/-/random-access-storage-2.2.1.tgz#7d527fdff451866bee43a24bbbe518e5085187a0"
@@ -9411,6 +9426,11 @@ react-native-keychain@^8.0.0:
 "react-native-libsodium@https://github.com/sodium-friends/react-native-libsodium#191a444f7fad92c0e825a8bd9ac357dea72793d4":
   version "0.0.1"
   resolved "https://github.com/sodium-friends/react-native-libsodium#191a444f7fad92c0e825a8bd9ac357dea72793d4"
+
+react-native-libuv@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-libuv/-/react-native-libuv-0.5.1.tgz#ed22001d122a0056b88acc13f24aa4acba1f5571"
+  integrity sha512-wUaNWpQZ9Cv+Cm1ioIY2cQ2GUDOVpA7NsxF09UUPVe+euju76vXJxAbDh/uKntXTGZWRponOt48UcLbTFukTBA==
 
 react-native-mmkv-flipper-plugin@^1.0.0:
   version "1.0.0"

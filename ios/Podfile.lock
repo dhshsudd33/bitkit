@@ -84,6 +84,9 @@ PODS:
   - nodejs-mobile-react-native (0.7.0):
     - React-Core
   - OpenSSL-Universal (1.1.1100)
+  - random-access-react-native (0.3.0):
+    - React
+    - react-native-libuv
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -330,6 +333,8 @@ PODS:
     - React
   - react-native-libsodium (0.0.1):
     - React-Core
+  - react-native-libuv (0.5.1):
+    - React
   - react-native-mmkv (2.4.3):
     - MMKV (>= 1.2.13)
     - React-Core
@@ -541,6 +546,7 @@ DEPENDENCIES:
   - lottie-react-native (from `../node_modules/lottie-react-native`)
   - nodejs-mobile-react-native (from `../node_modules/nodejs-mobile-react-native`)
   - OpenSSL-Universal (= 1.1.1100)
+  - random-access-react-native (from `../node_modules/random-access-react-native`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
@@ -565,6 +571,7 @@ DEPENDENCIES:
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-ldk (from `../node_modules/@synonymdev/react-native-ldk`)"
   - react-native-libsodium (from `../node_modules/react-native-libsodium`)
+  - react-native-libuv (from `../node_modules/react-native-libuv`)
   - react-native-mmkv (from `../node_modules/react-native-mmkv`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-randombytes (from `../node_modules/react-native-randombytes`)
@@ -638,6 +645,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/lottie-react-native"
   nodejs-mobile-react-native:
     :path: "../node_modules/nodejs-mobile-react-native"
+  random-access-react-native:
+    :path: "../node_modules/random-access-react-native"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -682,6 +691,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@synonymdev/react-native-ldk"
   react-native-libsodium:
     :path: "../node_modules/react-native-libsodium"
+  react-native-libuv:
+    :path: "../node_modules/react-native-libuv"
   react-native-mmkv:
     :path: "../node_modules/react-native-mmkv"
   react-native-netinfo:
@@ -774,6 +785,7 @@ SPEC CHECKSUMS:
   MMKVCore: 89f5c8a66bba2dcd551779dea4d412eeec8ff5bb
   nodejs-mobile-react-native: a30e24f07200254c0a3536be3a9f09c512610f6a
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
+  random-access-react-native: 14b5392bcf99ef09d56b8587b59934a5a3f2315a
   RCT-Folly: 4d8508a426467c48885f1151029bc15fa5d7b3b8
   RCTRequired: 3e917ea5377751094f38145fdece525aa90545a0
   RCTTypeSafety: c43c072a4bd60feb49a9570b0517892b4305c45e
@@ -796,6 +808,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: 4bc9ed38c8be255b515d8c88babbaf74973f91a8
   react-native-ldk: d8da94aa7fe37cc9bf034502a44135d196e9a22c
   react-native-libsodium: f4eba037c4ddf73f86b08075452cacb957256147
+  react-native-libuv: ba032a3d729fc63bb3207e1af31d92142e691140
   react-native-mmkv: 1265a348a4711097ba29c8bcefd5971f48220f2b
   react-native-netinfo: 1a6035d3b9780221d407c277ebfb5722ace00658
   react-native-randombytes: 421f1c7d48c0af8dbcd471b0324393ebf8fe7846
@@ -834,6 +847,6 @@ SPEC CHECKSUMS:
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 1ae9a63a687f85959de450190fd428149e466ae1
+PODFILE CHECKSUM: 13a2e433b516283d33b5bb72085f8a69750a2fbd
 
 COCOAPODS: 1.11.3
