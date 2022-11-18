@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import SDK from '@synonymdev/slashtags-sdk';
+import SDK, { SlashURL } from '@synonymdev/slashtags-sdk';
 import { createContext } from 'react';
 import { useSelector } from 'react-redux';
 import RAWSFactory from 'random-access-web-storage';
@@ -101,6 +101,11 @@ export const SlashtagsProvider = ({ children }): JSX.Element => {
 				// TODO(slashtags): add settings to customize this relay or use native
 				relay,
 			});
+
+			// Hardcode known seeder as a backup (and testing no-announcements seeder)
+			_sdk.swarm.joinPeer(
+				SlashURL.decode('o7aqyqdyq96zew49g1cu5kcjgjj3n14ekwpm645izspx4dz8umsy'),
+			);
 
 			// Temporary fix by opening the public drive in writable mode, before it
 			// is opened as read-only by the corestore replication streams.
