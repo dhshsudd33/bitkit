@@ -24,7 +24,6 @@ import { receiveIcon, sendIcon } from '../../assets/icons/tabs';
 import { toggleView } from '../../store/actions/user';
 import useColors from '../../hooks/colors';
 import { TAssetType } from '../../store/types/wallet';
-import * as XXX from 'aaaa';
 
 export type TabNavigationProp = NativeStackNavigationProp<TabStackParamList>;
 
@@ -102,7 +101,6 @@ export const TabBar = ({
 	}, []);
 
 	const onSendPress = useCallback((): void => {
-		console.info('xxx', XXX);
 		toggleView({
 			view: 'sendNavigation',
 			data: { isOpen: true },
