@@ -29,6 +29,8 @@ module.exports = (async () => {
       extraNodeModules: {
         ...require('node-libs-react-native'),
         "sodium-native": path.resolve(__dirname, './node_modules/react-native-libsodium'),
+        "@shopify/react-native-skia": path.resolve(__dirname, './src/utils/react-native-skia-stub'),
+        "aaaa": path.resolve(__dirname, './src/utils/react-native-skia-stub'),
       },
       blacklistRE: exclusionList([
         /android\/build\/nodejs-native-assets-temp-build\/.*/,
