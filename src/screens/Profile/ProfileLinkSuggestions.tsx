@@ -8,30 +8,30 @@ import { updateProfileLink } from '../../store/actions/ui';
 import SafeAreaInsets from '../../components/SafeAreaInsets';
 import type { RootStackScreenProps } from '../../navigation/types';
 
-const suggestions = [
-	'Email',
-	'Phone',
-	'Website',
-	'Twitter',
-	'Telegram',
-	'Instagram',
-	'Facebook',
-	'LinkedIn',
-	'Github',
-	'Calendly',
-	'Vimeo',
-	'YouTube',
-	'Twitch',
-	'Pinterest',
-	'TikTok',
-	'Spotify',
-];
+export const suggestions = {
+	Email: { prefix: 'mailto:' },
+	Phone: { prefix: 'tel:' },
+	Website: { prefix: 'https://' },
+	Twitter: { prefix: 'https://twitter.com/' },
+	Telegram: { prefix: 'https://t.me/' },
+	Instagram: { prefix: 'https://instagram.com/' },
+	Facebook: { prefix: 'https://facebook.com/' },
+	LinkedIn: { prefix: 'https://linkedin.com/in/' },
+	Github: { prefix: 'https://github.com/' },
+	Calendly: { prefix: 'https://calendly.com/' },
+	Vimeo: { prefix: 'https://vimeo.com/' },
+	Youtube: { prefix: 'https://www.youtube.com/@' },
+	Twitch: { prefix: 'https://www.twitch.tv/' },
+	Pinterest: { prefix: 'https://pinterest.com/' },
+	TikTok: { prefix: 'https://tiktok.com/@' },
+	Spotify: { prefix: 'https://open.spotify.com/' },
+};
 
 export const ProfileLinkSuggestions = ({
 	navigation,
 }: RootStackScreenProps<'ProfileLinkSuggestions'>): ReactElement => {
 	const handleChoose = (suggestion: string): void => {
-		updateProfileLink({ title: suggestion });
+		updateProfileLink({ title: suggestion, url: '' });
 		navigation.goBack();
 	};
 
@@ -40,7 +40,7 @@ export const ProfileLinkSuggestions = ({
 			<SafeAreaInsets type="top" />
 			<NavigationHeader title="Suggestions To Add" />
 			<View style={styles.buttons}>
-				{suggestions.map((suggestion) => (
+				{Object.keys(suggestions).map((suggestion) => (
 					<Button
 						key={suggestion}
 						text={suggestion}

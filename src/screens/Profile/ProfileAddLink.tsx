@@ -12,12 +12,17 @@ import { updateProfileLink } from '../../store/actions/ui';
 import NavigationHeader from '../../components/NavigationHeader';
 import SafeAreaInsets from '../../components/SafeAreaInsets';
 import { addLink } from '../../store/actions/slashtags';
+import { suggestions } from './ProfileLinkSuggestions';
 
 export const ProfileAddLinkForm = ({
 	navigation,
 }: RootStackScreenProps<'ProfileAddLink'>): ReactElement => {
 	const insets = useSafeAreaInsets();
-	const form = useSelector((state: Store) => state.ui.profileLink);
+	const form = useSelector((state: Store) => {
+		const _form = state.ui.profileLink;
+		_form.url = _form.url || suggestions[_form.title]?.prefix || '';
+		return _form;
+	});
 
 	const buttonContainerStyles = useMemo(
 		() => ({
@@ -59,7 +64,7 @@ export const ProfileAddLinkForm = ({
 				<LabeledInput
 					style={styles.input}
 					label="Link or text"
-					placeholder="https://"
+					placeholder={suggestions[form.title]?.prefix}
 					value={form.url}
 					multiline={true}
 					returnKeyType="default"
