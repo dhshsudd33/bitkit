@@ -70,7 +70,7 @@ const FeeCustom = ({
 		if (
 			transaction?.satsPerByte &&
 			// This check is to prevent situations where all values are set to 1sat/vbyte. Where setting 1sat/vbyte is perfectly fine.
-			feeEstimates.minimum !== feeEstimates.slow &&
+			feeEstimates.minimum < feeEstimates.slow &&
 			transaction.satsPerByte <= feeEstimates.minimum
 		) {
 			setDisplayFeeDialog(true);
