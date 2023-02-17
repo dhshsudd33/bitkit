@@ -1,4 +1,10 @@
-import React, { ReactElement, memo, useCallback, useMemo } from 'react';
+import React, {
+	ReactElement,
+	memo,
+	useCallback,
+	useMemo,
+	useState,
+} from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,12 +19,17 @@ import { getTotalFee } from '../../../utils/wallet/transactions';
 import useDisplayValues from '../../../hooks/displayValues';
 import { transactionSelector } from '../../../store/reselect/wallet';
 import type { SendScreenProps } from '../../../navigation/types';
+import { onChainFeesSelector } from '../../../store/reselect/fees';
+import Dialog from '../../../components/Dialog';
 
 const FeeCustom = ({
 	navigation,
 }: SendScreenProps<'FeeCustom'>): ReactElement => {
 	const insets = useSafeAreaInsets();
 	const transaction = useSelector(transactionSelector);
+	const feeEstimates = useSelector(onChainFeesSelector);
+
+	const [displayFeeDialog, setDisplayFeeDialog] = useState(false);
 
 	const buttonContainerStyles = useMemo(
 		() => ({
@@ -54,6 +65,20 @@ const FeeCustom = ({
 
 	const isValid = transaction.satsPerByte !== 0;
 
+	const onContinue = (): void => {
+		// Check if the user is setting the minimum relay fee given the current fee environment.
+		if (
+			transaction?.satsPerByte &&
+			// This check is to prevent situations where all values are set to 1sat/vbyte. Where setting 1sat/vbyte is perfectly fine.
+			feeEstimates.minimum !== feeEstimates.slow &&
+			transaction.satsPerByte <= feeEstimates.minimum
+		) {
+			setDisplayFeeDialog(true);
+		} else {
+			navigation.goBack();
+		}
+	};
+
 	return (
 		<GradientView style={styles.container}>
 			<BottomSheetNavigationHeader
@@ -76,10 +101,22 @@ const FeeCustom = ({
 						size="large"
 						text="Continue"
 						disabled={!isValid}
-						onPress={(): void => navigation.goBack()}
+						onPress={onContinue}
 					/>
 				</View>
 			</View>
+			<Dialog
+				visible={displayFeeDialog}
+				title="Fee is potentially too low"
+				description={`The fee you are trying to set is below ${feeEstimates.minimum} sats and may be too low due to current network conditions. This transaction may fail, take a while to confirm, or get trimmed from the mempool. Do you wish to proceed?`}
+				onCancel={(): void => {
+					setDisplayFeeDialog(false);
+				}}
+				onConfirm={async (): Promise<void> => {
+					setDisplayFeeDialog(false);
+					navigation.goBack();
+				}}
+			/>
 		</GradientView>
 	);
 };
