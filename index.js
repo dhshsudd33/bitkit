@@ -4,6 +4,10 @@ import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 import Root from './Root';
 import { name as appName } from './app.json';
 
+import 'intl';
+import 'intl/locale-data/jsonp/en';
+import 'intl-pluralrules';
+
 // TEMP: disable font scaling for globally
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;

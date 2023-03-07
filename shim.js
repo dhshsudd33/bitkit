@@ -20,6 +20,8 @@ if (typeof Buffer === 'undefined') {
 	global.Buffer = require('buffer').Buffer;
 }
 
+global.Intl = require('intl');
+
 global.net = require('./src/utils/electrum/net');
 global.tls = require('./src/utils/electrum/tls');
 
