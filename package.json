@@ -51,7 +51,7 @@
     "@reduxjs/toolkit": "^1.9.3",
     "@shopify/react-native-skia": "0.1.171",
     "@synonymdev/blocktank-client": "0.0.47",
-    "@synonymdev/react-native-ldk": "/Users/coreyphillips/Documents/synonym/pr/jay/113/react-native-ldk/lib",
+    "@synonymdev/react-native-ldk": "^0.0.81",
     "@synonymdev/react-native-lnurl": "^0.0.3",
     "@synonymdev/result": "0.0.2",
     "@synonymdev/slashtags-auth": "^1.0.0-alpha.5",

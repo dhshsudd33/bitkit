@@ -2413,8 +2413,10 @@
     cross-fetch "^3.1.4"
     node-fetch "3.1.1"
 
-"@synonymdev/react-native-ldk@file:../../../jay/113/react-native-ldk/lib":
-  version "0.0.95"
+"@synonymdev/react-native-ldk@^0.0.81":
+  version "0.0.81"
+  resolved "https://registry.yarnpkg.com/@synonymdev/react-native-ldk/-/react-native-ldk-0.0.81.tgz#411e50e6f5b80851335f54f0ff8148cc2376ac06"
+  integrity sha512-qQbfoNTSttcOyfRGn7+RcK8k2xXyWpraKrWKE8UlZtlqcpkeDPtuAushS46sQECtf16A4ihuH23gPqrStBp/+Q==
   dependencies:
     bitcoinjs-lib "^6.0.2"
 
