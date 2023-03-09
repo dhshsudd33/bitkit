@@ -171,7 +171,6 @@
     "browserify-zlib": "^0.2.0",
     "dns.js": "^1.0.1",
     "electrum-client": "github:BlueWallet/rn-electrum-client#76c0ea35e1a50c47f3a7f818d529ebd100161496",
-    "esbuild": "^0.15.7",
     "eslint": "^8.22.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",

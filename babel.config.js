@@ -24,7 +24,6 @@ function transformBigIntLiteral() {
 		visitor: {
 			// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 			BigIntLiteral(path) {
-				console.log(path.node);
 				const bigintCall = types.callExpression(types.identifier('BigInt'), [
 					types.stringLiteral(path.node.value),
 				]);
