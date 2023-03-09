@@ -1,9 +1,33 @@
+const {types} = require('@babel/core')
+
 module.exports = {
 	presets: ['module:metro-react-native-babel-preset'],
-	plugins: ['module:react-native-dotenv', 'react-native-reanimated/plugin'],
+	plugins: [
+		// Support bigint literal `0n`
+		transformBigIntLiteral,
+		// Support `for await () {}`
+		'@babel/plugin-proposal-async-generator-functions',
+		'module:react-native-dotenv',
+		'react-native-reanimated/plugin',
+	],
 	env: {
 		production: {
 			plugins: ['transform-remove-console'],
 		},
 	},
 };
+
+// Copied from unsupported https://github.com/babel/babel/pull/10102/files
+function transformBigIntLiteral() {
+  return {
+    visitor: {     
+      BigIntLiteral(path) {
+      	console.log(path.node)
+        const bigintCall = types.callExpression(types.identifier("BigInt"), [
+          types.stringLiteral(path.node.value),
+        ]);
+        path.replaceWith(bigintCall);
+      },
+    },
+  };
+}

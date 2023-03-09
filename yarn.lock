@@ -253,6 +253,11 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.18.9.tgz#4b8aea3b069d8cb8a72cdfe28ddf5ceca695ef2f"
   integrity sha512-aBXPT3bmtLryXaoJLyYPXPlSD4p1ld9aYeR+sJNOZjJJGiOpb+fKfh3NkcCu7J54nUJwCERPBExCCpyCOHnu/w==
 
+"@babel/helper-plugin-utils@^7.20.2":
+  version "7.20.2"
+  resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.20.2.tgz#d1b9000752b18d0877cff85a5c376ce5c3121629"
+  integrity sha512-8RvlJG2mj4huQ4pZ+rU9lqKi9ZKiRmuvGuM2HlWmkmgOhbs6zEAw6IEiJ5cQqGbDzGZOhwuOQNtZMi/ENLjZoQ==
+
 "@babel/helper-remap-async-to-generator@^7.18.6", "@babel/helper-remap-async-to-generator@^7.18.9":
   version "7.18.9"
   resolved "https://registry.yarnpkg.com/@babel/helper-remap-async-to-generator/-/helper-remap-async-to-generator-7.18.9.tgz#997458a0e3357080e54e1d79ec347f8a8cd28519"
@@ -381,6 +386,16 @@
   dependencies:
     "@babel/helper-environment-visitor" "^7.18.9"
     "@babel/helper-plugin-utils" "^7.18.9"
+    "@babel/helper-remap-async-to-generator" "^7.18.9"
+    "@babel/plugin-syntax-async-generators" "^7.8.4"
+
+"@babel/plugin-proposal-async-generator-functions@^7.20.7":
+  version "7.20.7"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.20.7.tgz#bfb7276d2d573cb67ba379984a2334e262ba5326"
+  integrity sha512-xMbiLsn/8RK7Wq7VeVytytS2L6qE69bXPB10YCmMdDZbKF4okCqY74pI/jJQ/8U0b/F6NrT2+14b8/P9/3AMGA==
+  dependencies:
+    "@babel/helper-environment-visitor" "^7.18.9"
+    "@babel/helper-plugin-utils" "^7.20.2"
     "@babel/helper-remap-async-to-generator" "^7.18.9"
     "@babel/plugin-syntax-async-generators" "^7.8.4"
 
@@ -2177,10 +2192,30 @@
     b4a "^1.6.0"
     protomux-rpc "^1.3.0"
 
-"@synonymdev/slashtags-sdk@^1.0.0-alpha.19", "@synonymdev/slashtags-sdk@^1.0.0-alpha.36":
+"@synonymdev/slashtags-sdk@^1.0.0-alpha.19":
   version "1.0.0-alpha.36"
   resolved "https://registry.yarnpkg.com/@synonymdev/slashtags-sdk/-/slashtags-sdk-1.0.0-alpha.36.tgz#d47b60bbaf8b55259034d4aa36be6af062c9cdc2"
   integrity sha512-7G6cLINKjaJ/28n7zj8F7RFkusGkIJ3XzUWZtIopomjwTvLYdYrFyFjwL/mIyiuNtK/9OeLNp1NIVw7KpX+ULQ==
+  dependencies:
+    "@hyperswarm/dht" "^6.2.1"
+    "@hyperswarm/dht-relay" "^0.3.0"
+    "@synonymdev/slashtag" "^1.0.0-alpha.24"
+    "@synonymdev/slashtags-url" "^1.0.0-alpha.0"
+    b4a "^1.6.0"
+    corestore "^6.2.1"
+    graceful-goodbye "^1.1.0"
+    hypercore-crypto "^3.3.0"
+    hyperdrive "^11.0.0-alpha.3"
+    hyperswarm "^4.3.5"
+    random-access-memory "^5.0.1"
+    sodium-universal "^3.1.0"
+    turbo-hash-map "^1.0.3"
+    ws "^8.8.1"
+
+"@synonymdev/slashtags-sdk@^1.0.0-alpha.38":
+  version "1.0.0-alpha.38"
+  resolved "https://registry.yarnpkg.com/@synonymdev/slashtags-sdk/-/slashtags-sdk-1.0.0-alpha.38.tgz#79dc1f0528870a5b8ae5d38100870de19311dd81"
+  integrity sha512-OJ7DbY3XtlngACr2SiymsXVqCZ3xxPmrSunX13+K5adD4alPR62tI6/v1Sa+Ceo0ayzAcSZhW4BbI+XuOrcrig==
   dependencies:
     "@hyperswarm/dht" "^6.2.1"
     "@hyperswarm/dht-relay" "^0.3.0"
