@@ -1,4 +1,4 @@
-const {types} = require('@babel/core')
+const { types } = require('@babel/core');
 
 module.exports = {
 	presets: ['module:metro-react-native-babel-preset'],
@@ -18,16 +18,18 @@ module.exports = {
 };
 
 // Copied from unsupported https://github.com/babel/babel/pull/10102/files
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 function transformBigIntLiteral() {
-  return {
-    visitor: {     
-      BigIntLiteral(path) {
-      	console.log(path.node)
-        const bigintCall = types.callExpression(types.identifier("BigInt"), [
-          types.stringLiteral(path.node.value),
-        ]);
-        path.replaceWith(bigintCall);
-      },
-    },
-  };
+	return {
+		visitor: {
+			// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+			BigIntLiteral(path) {
+				console.log(path.node);
+				const bigintCall = types.callExpression(types.identifier('BigInt'), [
+					types.stringLiteral(path.node.value),
+				]);
+				path.replaceWith(bigintCall);
+			},
+		},
+	};
 }
