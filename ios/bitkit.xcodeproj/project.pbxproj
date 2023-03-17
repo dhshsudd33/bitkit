@@ -11,20 +11,20 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2AEE69E3A6874C3CB887D859 /* NHaasGroteskDSW02-15UltTh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4863937F84BB4E1BAF43A2D4 /* NHaasGroteskDSW02-15UltTh.ttf */; };
-		4A661C19E6C64B15BB478487 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 238E3BF606714AFFB4D67362 /* Roboto-Medium.ttf */; };
-		718E7F84669D45D29D6F442F /* NHaasGroteskDSW02-95Blk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27B1BAEEF8D84764A101061B /* NHaasGroteskDSW02-95Blk.ttf */; };
+		77BFF91529C3932F000E7921 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF90A29C3932F000E7921 /* Roboto-Medium.ttf */; };
+		77BFF91629C3932F000E7921 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF90B29C3932F000E7921 /* Roboto-Light.ttf */; };
+		77BFF91729C3932F000E7921 /* NHaasGroteskDSW02-75Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF90C29C3932F000E7921 /* NHaasGroteskDSW02-75Bd.ttf */; };
+		77BFF91829C3932F000E7921 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF90D29C3932F000E7921 /* Roboto-Regular.ttf */; };
+		77BFF91929C3932F000E7921 /* NHaasGroteskDSW02-65Md.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF90E29C3932F000E7921 /* NHaasGroteskDSW02-65Md.ttf */; };
+		77BFF91A29C3932F000E7921 /* NHaasGroteskDSW02-45Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF90F29C3932F000E7921 /* NHaasGroteskDSW02-45Lt.ttf */; };
+		77BFF91B29C3932F000E7921 /* NHaasGroteskDSW02-55Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF91029C3932F000E7921 /* NHaasGroteskDSW02-55Rg.ttf */; };
+		77BFF91C29C3932F000E7921 /* NHaasGroteskDSW02-15UltTh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF91129C3932F000E7921 /* NHaasGroteskDSW02-15UltTh.ttf */; };
+		77BFF91D29C3932F000E7921 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF91229C3932F000E7921 /* Roboto-Bold.ttf */; };
+		77BFF91E29C3932F000E7921 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF91329C3932F000E7921 /* Roboto-Black.ttf */; };
+		77BFF91F29C3932F000E7921 /* NHaasGroteskDSW02-95Blk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77BFF91429C3932F000E7921 /* NHaasGroteskDSW02-95Blk.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		836CFE14E1CA4B7F9F7C45B4 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F201203E6DA04940BE64A453 /* Roboto-Light.ttf */; };
-		9C4ECF9B529B457EAF618188 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB9392B86274E8E82EC7FFE /* Roboto-Bold.ttf */; };
-		9E8B668F2478B6A2683DFC67 /* libPods-bitkit-bitkitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC1B53E562C2DF30F5FE02D2 /* libPods-bitkit-bitkitTests.a */; };
-		B0F2A1C151104FAFBFE014F1 /* NHaasGroteskDSW02-45Lt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB25D4B355094EE189F0B6C7 /* NHaasGroteskDSW02-45Lt.ttf */; };
-		BA66D69C30338252C6128AA2 /* libPods-bitkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6DA23B0949AFF0AAF5CEC5 /* libPods-bitkit.a */; };
-		BF5D4320928F4AFF84438837 /* NHaasGroteskDSW02-75Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9AEDE1530FB4EA597386B2F /* NHaasGroteskDSW02-75Bd.ttf */; };
-		C61245584203419AAF5F809D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 004FCA8DB1B7472DA1F3ECEB /* Roboto-Regular.ttf */; };
-		DE82482EDDC644C28EFA562D /* NHaasGroteskDSW02-65Md.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B9147BC6BBC464C88F4D692 /* NHaasGroteskDSW02-65Md.ttf */; };
-		EAA7B038119948C088463C18 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 583B74B8962248F6A5094A46 /* Roboto-Black.ttf */; };
-		F6AD9C95FFC042468772007E /* NHaasGroteskDSW02-55Rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EB4627F7C344C3191C9C71B /* NHaasGroteskDSW02-55Rg.ttf */; };
+		90612006928113F3EC1018E1 /* libPods-bitkit-bitkitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D55CEF13A1A7248995FA4B4 /* libPods-bitkit-bitkitTests.a */; };
+		EAFB2CE3E8117DABCF83B683 /* libPods-bitkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0136CEE8BC16B4938F2538A7 /* libPods-bitkit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,56 +38,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		004FCA8DB1B7472DA1F3ECEB /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* bitkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bitkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* bitkitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bitkitTests.m; sourceTree = "<group>"; };
+		0136CEE8BC16B4938F2538A7 /* libPods-bitkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bitkit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* bitkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = bitkit/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = bitkit/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = bitkit/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = bitkit/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = bitkit/main.m; sourceTree = "<group>"; };
-		238E3BF606714AFFB4D67362 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		27B1BAEEF8D84764A101061B /* NHaasGroteskDSW02-95Blk.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NHaasGroteskDSW02-95Blk.ttf"; path = "../src/assets/fonts/NHaasGroteskDSW02-95Blk.ttf"; sourceTree = "<group>"; };
-		2B9147BC6BBC464C88F4D692 /* NHaasGroteskDSW02-65Md.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NHaasGroteskDSW02-65Md.ttf"; path = "../src/assets/fonts/NHaasGroteskDSW02-65Md.ttf"; sourceTree = "<group>"; };
-		4863937F84BB4E1BAF43A2D4 /* NHaasGroteskDSW02-15UltTh.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NHaasGroteskDSW02-15UltTh.ttf"; path = "../src/assets/fonts/NHaasGroteskDSW02-15UltTh.ttf"; sourceTree = "<group>"; };
-		4EB4627F7C344C3191C9C71B /* NHaasGroteskDSW02-55Rg.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NHaasGroteskDSW02-55Rg.ttf"; path = "../src/assets/fonts/NHaasGroteskDSW02-55Rg.ttf"; sourceTree = "<group>"; };
-		583B74B8962248F6A5094A46 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../src/assets/fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
-		5D6DA23B0949AFF0AAF5CEC5 /* libPods-bitkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bitkit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		773563012836A95200964460 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
-		773563022836A95200964460 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
-		773563032836A95200964460 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		773563042836A95200964460 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
-		773563052836A95200964460 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
-		773563062836A95200964460 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		773563072836A95200964460 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
-		773563082836A95200964460 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
-		773563092836A95200964460 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		7735630A2836A95200964460 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		7735630B2836A95200964460 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		7735630C2836A95200964460 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		7735630D2836A95200964460 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		7735630E2836A95200964460 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
-		7735630F2836A95200964460 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		773563102836A95200964460 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		773563212836A9B700964460 /* NHaasGroteskDSW02-95Blk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-95Blk.ttf"; sourceTree = "<group>"; };
-		773563222836A9B700964460 /* NHaasGroteskDSW02-45Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-45Lt.ttf"; sourceTree = "<group>"; };
-		773563232836A9B700964460 /* NHaasGroteskDSW02-15UltTh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-15UltTh.ttf"; sourceTree = "<group>"; };
-		773563242836A9B800964460 /* NHaasGroteskDSW02-65Md.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-65Md.ttf"; sourceTree = "<group>"; };
-		773563252836A9B800964460 /* NHaasGroteskDSW02-75Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-75Bd.ttf"; sourceTree = "<group>"; };
-		773563262836A9B800964460 /* NHaasGroteskDSW02-55Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-55Rg.ttf"; sourceTree = "<group>"; };
-		7F439A6B4907FDD37084E373 /* Pods-bitkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit.release.xcconfig"; path = "Target Support Files/Pods-bitkit/Pods-bitkit.release.xcconfig"; sourceTree = "<group>"; };
+		5419F5D6F1BC550374C18282 /* Pods-bitkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit.release.xcconfig"; path = "Target Support Files/Pods-bitkit/Pods-bitkit.release.xcconfig"; sourceTree = "<group>"; };
+		56F12652C740A45379559906 /* Pods-bitkit-bitkitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit-bitkitTests.debug.xcconfig"; path = "Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D45C09608FF6E7A97BA25C1 /* Pods-bitkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit.debug.xcconfig"; path = "Target Support Files/Pods-bitkit/Pods-bitkit.debug.xcconfig"; sourceTree = "<group>"; };
+		77BFF90A29C3932F000E7921 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		77BFF90B29C3932F000E7921 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		77BFF90C29C3932F000E7921 /* NHaasGroteskDSW02-75Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-75Bd.ttf"; sourceTree = "<group>"; };
+		77BFF90D29C3932F000E7921 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		77BFF90E29C3932F000E7921 /* NHaasGroteskDSW02-65Md.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-65Md.ttf"; sourceTree = "<group>"; };
+		77BFF90F29C3932F000E7921 /* NHaasGroteskDSW02-45Lt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-45Lt.ttf"; sourceTree = "<group>"; };
+		77BFF91029C3932F000E7921 /* NHaasGroteskDSW02-55Rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-55Rg.ttf"; sourceTree = "<group>"; };
+		77BFF91129C3932F000E7921 /* NHaasGroteskDSW02-15UltTh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-15UltTh.ttf"; sourceTree = "<group>"; };
+		77BFF91229C3932F000E7921 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		77BFF91329C3932F000E7921 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		77BFF91429C3932F000E7921 /* NHaasGroteskDSW02-95Blk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NHaasGroteskDSW02-95Blk.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = bitkit/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BB25D4B355094EE189F0B6C7 /* NHaasGroteskDSW02-45Lt.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NHaasGroteskDSW02-45Lt.ttf"; path = "../src/assets/fonts/NHaasGroteskDSW02-45Lt.ttf"; sourceTree = "<group>"; };
-		CD29565B823C602A455F3915 /* Pods-bitkit-bitkitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit-bitkitTests.release.xcconfig"; path = "Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests.release.xcconfig"; sourceTree = "<group>"; };
-		DDB9392B86274E8E82EC7FFE /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		E86BDF74391D44C804A26606 /* Pods-bitkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit.debug.xcconfig"; path = "Target Support Files/Pods-bitkit/Pods-bitkit.debug.xcconfig"; sourceTree = "<group>"; };
-		E9AEDE1530FB4EA597386B2F /* NHaasGroteskDSW02-75Bd.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NHaasGroteskDSW02-75Bd.ttf"; path = "../src/assets/fonts/NHaasGroteskDSW02-75Bd.ttf"; sourceTree = "<group>"; };
-		EC1B53E562C2DF30F5FE02D2 /* libPods-bitkit-bitkitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bitkit-bitkitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED297162215062.0.0B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F201203E6DA04940BE64A453 /* Roboto-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Light.ttf"; path = "../src/assets/fonts/Roboto-Light.ttf"; sourceTree = "<group>"; };
-		FCDF1208A02053ABBA389591 /* Pods-bitkit-bitkitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit-bitkitTests.debug.xcconfig"; path = "Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D55CEF13A1A7248995FA4B4 /* libPods-bitkit-bitkitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bitkit-bitkitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26DB1F7C0D65ADEE62A33D0 /* Pods-bitkit-bitkitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bitkit-bitkitTests.release.xcconfig"; path = "Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E8B668F2478B6A2683DFC67 /* libPods-bitkit-bitkitTests.a in Frameworks */,
+				90612006928113F3EC1018E1 /* libPods-bitkit-bitkitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA66D69C30338252C6128AA2 /* libPods-bitkit.a in Frameworks */,
+				EAFB2CE3E8117DABCF83B683 /* libPods-bitkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,58 +121,30 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ED297162215062.0.0B7C4FE /* JavaScriptCore.framework */,
-				5D6DA23B0949AFF0AAF5CEC5 /* libPods-bitkit.a */,
-				EC1B53E562C2DF30F5FE02D2 /* libPods-bitkit-bitkitTests.a */,
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				0136CEE8BC16B4938F2538A7 /* libPods-bitkit.a */,
+				9D55CEF13A1A7248995FA4B4 /* libPods-bitkit-bitkitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		68B484F4F3524AE7B1D23C8F /* Resources */ = {
+		77BFF90929C3932F000E7921 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				4863937F84BB4E1BAF43A2D4 /* NHaasGroteskDSW02-15UltTh.ttf */,
-				BB25D4B355094EE189F0B6C7 /* NHaasGroteskDSW02-45Lt.ttf */,
-				4EB4627F7C344C3191C9C71B /* NHaasGroteskDSW02-55Rg.ttf */,
-				2B9147BC6BBC464C88F4D692 /* NHaasGroteskDSW02-65Md.ttf */,
-				E9AEDE1530FB4EA597386B2F /* NHaasGroteskDSW02-75Bd.ttf */,
-				27B1BAEEF8D84764A101061B /* NHaasGroteskDSW02-95Blk.ttf */,
-				583B74B8962248F6A5094A46 /* Roboto-Black.ttf */,
-				DDB9392B86274E8E82EC7FFE /* Roboto-Bold.ttf */,
-				F201203E6DA04940BE64A453 /* Roboto-Light.ttf */,
-				238E3BF606714AFFB4D67362 /* Roboto-Medium.ttf */,
-				004FCA8DB1B7472DA1F3ECEB /* Roboto-Regular.ttf */,
+				77BFF90A29C3932F000E7921 /* Roboto-Medium.ttf */,
+				77BFF90B29C3932F000E7921 /* Roboto-Light.ttf */,
+				77BFF90C29C3932F000E7921 /* NHaasGroteskDSW02-75Bd.ttf */,
+				77BFF90D29C3932F000E7921 /* Roboto-Regular.ttf */,
+				77BFF90E29C3932F000E7921 /* NHaasGroteskDSW02-65Md.ttf */,
+				77BFF90F29C3932F000E7921 /* NHaasGroteskDSW02-45Lt.ttf */,
+				77BFF91029C3932F000E7921 /* NHaasGroteskDSW02-55Rg.ttf */,
+				77BFF91129C3932F000E7921 /* NHaasGroteskDSW02-15UltTh.ttf */,
+				77BFF91229C3932F000E7921 /* Roboto-Bold.ttf */,
+				77BFF91329C3932F000E7921 /* Roboto-Black.ttf */,
+				77BFF91429C3932F000E7921 /* NHaasGroteskDSW02-95Blk.ttf */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		773563002836A95200964460 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				773563232836A9B700964460 /* NHaasGroteskDSW02-15UltTh.ttf */,
-				773563222836A9B700964460 /* NHaasGroteskDSW02-45Lt.ttf */,
-				773563262836A9B800964460 /* NHaasGroteskDSW02-55Rg.ttf */,
-				773563242836A9B800964460 /* NHaasGroteskDSW02-65Md.ttf */,
-				773563252836A9B800964460 /* NHaasGroteskDSW02-75Bd.ttf */,
-				773563212836A9B700964460 /* NHaasGroteskDSW02-95Blk.ttf */,
-				773563012836A95200964460 /* Fontisto.ttf */,
-				773563022836A95200964460 /* Octicons.ttf */,
-				773563032836A95200964460 /* Feather.ttf */,
-				773563042836A95200964460 /* Entypo.ttf */,
-				773563052836A95200964460 /* FontAwesome5_Brands.ttf */,
-				773563062836A95200964460 /* MaterialCommunityIcons.ttf */,
-				773563072836A95200964460 /* AntDesign.ttf */,
-				773563082836A95200964460 /* Foundation.ttf */,
-				773563092836A95200964460 /* Ionicons.ttf */,
-				7735630A2836A95200964460 /* FontAwesome5_Solid.ttf */,
-				7735630B2836A95200964460 /* FontAwesome5_Regular.ttf */,
-				7735630C2836A95200964460 /* FontAwesome.ttf */,
-				7735630D2836A95200964460 /* Zocial.ttf */,
-				7735630E2836A95200964460 /* EvilIcons.ttf */,
-				7735630F2836A95200964460 /* SimpleLineIcons.ttf */,
-				773563102836A95200964460 /* MaterialIcons.ttf */,
-			);
-			path = Fonts;
+			name = fonts;
+			path = ../src/assets/fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -207,14 +157,13 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				773563002836A95200964460 /* Fonts */,
+				77BFF90929C3932F000E7921 /* fonts */,
 				13B07FAE1A68108700A75B9A /* bitkit */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* bitkitTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				68B484F4F3524AE7B1D23C8F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -233,10 +182,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E86BDF74391D44C804A26606 /* Pods-bitkit.debug.xcconfig */,
-				7F439A6B4907FDD37084E373 /* Pods-bitkit.release.xcconfig */,
-				FCDF1208A02053ABBA389591 /* Pods-bitkit-bitkitTests.debug.xcconfig */,
-				CD29565B823C602A455F3915 /* Pods-bitkit-bitkitTests.release.xcconfig */,
+				5D45C09608FF6E7A97BA25C1 /* Pods-bitkit.debug.xcconfig */,
+				5419F5D6F1BC550374C18282 /* Pods-bitkit.release.xcconfig */,
+				56F12652C740A45379559906 /* Pods-bitkit-bitkitTests.debug.xcconfig */,
+				D26DB1F7C0D65ADEE62A33D0 /* Pods-bitkit-bitkitTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -248,12 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "bitkitTests" */;
 			buildPhases = (
-				B1EC1C7FECD8A6D9A2C71B04 /* [CP] Check Pods Manifest.lock */,
+				6F83106E1221D89F1D3480A9 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				028F489D140C3EE8CB698623 /* [CP] Embed Pods Frameworks */,
-				AFC799313636061E73AA0D74 /* [CP] Copy Pods Resources */,
+				9E23F4AE5D187F5D09E95E6B /* [CP] Embed Pods Frameworks */,
+				501F01D2985BD49351B9E106 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,18 +218,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "bitkit" */;
 			buildPhases = (
-				235CBDEA2EA0B64278D168E7 /* [CP] Check Pods Manifest.lock */,
+				EA33F284C5D0597FD9365714 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				D89181101D3FFEF066999529 /* [CP] Embed Pods Frameworks */,
-				3F8229CDBDD404F4D873312C /* [CP] Copy Pods Resources */,
-				8ABE20C09B7F3E6A0FCFA142 /* [CP-User] [NODEJS MOBILE] Copy Node.js Project files */,
-				ABC7B8B85A30EEF5B794CEF2 /* [CP-User] [NODEJS MOBILE] Build Native Modules */,
-				F6F6BF0383026B95D432C5E9 /* [CP-User] [NODEJS MOBILE] Sign Native Modules */,
-				0B798637792A462C01C6073D /* [CP-User] [NODEJS MOBILE] Remove Simulator Strip */,
+				9A1B7D269E08C284430443B1 /* [CP] Embed Pods Frameworks */,
+				233B2038E60A5C1105F35C47 /* [CP] Copy Pods Resources */,
+				B44482AE31E3945A11495E38 /* [CP-User] [NODEJS MOBILE] Copy Node.js Project files */,
+				44353AD4DD22B6CD0E290127 /* [CP-User] [NODEJS MOBILE] Build Native Modules */,
+				65C3992A56E33C320C44B49B /* [CP-User] [NODEJS MOBILE] Sign Native Modules */,
+				C4B5EB8A1CCED918DC4D8A04 /* [CP-User] [NODEJS MOBILE] Remove Simulator Strip */,
 			);
 			buildRules = (
 			);
@@ -339,19 +288,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77BFF91829C3932F000E7921 /* Roboto-Regular.ttf in Resources */,
+				77BFF91B29C3932F000E7921 /* NHaasGroteskDSW02-55Rg.ttf in Resources */,
+				77BFF91729C3932F000E7921 /* NHaasGroteskDSW02-75Bd.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				77BFF91D29C3932F000E7921 /* Roboto-Bold.ttf in Resources */,
+				77BFF91929C3932F000E7921 /* NHaasGroteskDSW02-65Md.ttf in Resources */,
+				77BFF91C29C3932F000E7921 /* NHaasGroteskDSW02-15UltTh.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2AEE69E3A6874C3CB887D859 /* NHaasGroteskDSW02-15UltTh.ttf in Resources */,
-				B0F2A1C151104FAFBFE014F1 /* NHaasGroteskDSW02-45Lt.ttf in Resources */,
-				F6AD9C95FFC042468772007E /* NHaasGroteskDSW02-55Rg.ttf in Resources */,
-				DE82482EDDC644C28EFA562D /* NHaasGroteskDSW02-65Md.ttf in Resources */,
-				BF5D4320928F4AFF84438837 /* NHaasGroteskDSW02-75Bd.ttf in Resources */,
-				718E7F84669D45D29D6F442F /* NHaasGroteskDSW02-95Blk.ttf in Resources */,
-				EAA7B038119948C088463C18 /* Roboto-Black.ttf in Resources */,
-				9C4ECF9B529B457EAF618188 /* Roboto-Bold.ttf in Resources */,
-				836CFE14E1CA4B7F9F7C45B4 /* Roboto-Light.ttf in Resources */,
-				4A661C19E6C64B15BB478487 /* Roboto-Medium.ttf in Resources */,
-				C61245584203419AAF5F809D /* Roboto-Regular.ttf in Resources */,
+				77BFF91F29C3932F000E7921 /* NHaasGroteskDSW02-95Blk.ttf in Resources */,
+				77BFF91629C3932F000E7921 /* Roboto-Light.ttf in Resources */,
+				77BFF91A29C3932F000E7921 /* NHaasGroteskDSW02-45Lt.ttf in Resources */,
+				77BFF91529C3932F000E7921 /* Roboto-Medium.ttf in Resources */,
+				77BFF91E29C3932F000E7921 /* Roboto-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,64 +313,17 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
 			);
 			name = "Bundle React Native code and images";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		028F489D140C3EE8CB698623 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0B798637792A462C01C6073D /* [CP-User] [NODEJS MOBILE] Remove Simulator Strip */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] [NODEJS MOBILE] Remove Simulator Strip";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\nset -e\nFRAMEWORK_BINARY_PATH=\"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/NodeMobile.framework/NodeMobile\"\nFRAMEWORK_STRIPPED_PATH=\"$FRAMEWORK_BINARY_PATH-strip\"\nif [ \"$PLATFORM_NAME\" != \"iphonesimulator\" ]; then\n  if $(lipo \"$FRAMEWORK_BINARY_PATH\" -verify_arch \"x86_64\") ; then\n    lipo -output \"$FRAMEWORK_STRIPPED_PATH\" -remove \"x86_64\" \"$FRAMEWORK_BINARY_PATH\"\n    rm \"$FRAMEWORK_BINARY_PATH\"\n    mv \"$FRAMEWORK_STRIPPED_PATH\" \"$FRAMEWORK_BINARY_PATH\"\n    echo \"Removed simulator strip from NodeMobile.framework\"\n  fi\nfi\n";
-		};
-		235CBDEA2EA0B64278D168E7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bitkit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3F8229CDBDD404F4D873312C /* [CP] Copy Pods Resources */ = {
+		233B2038E60A5C1105F35C47 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -438,17 +340,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitkit/Pods-bitkit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8ABE20C09B7F3E6A0FCFA142 /* [CP-User] [NODEJS MOBILE] Copy Node.js Project files */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "[CP-User] [NODEJS MOBILE] Copy Node.js Project files";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\nset -e\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nNODEJS_BUILT_IN_MODULES_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/install/resources/nodejs-modules/ && pwd )\"\nif [ -d \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" ]\nthen\nrm -rf \"$CODESIGNING_FOLDER_PATH/nodejs-project/\"\nfi\nif [ -d \"$CODESIGNING_FOLDER_PATH/builtin_modules/\" ]\nthen\nrm -rf \"$CODESIGNING_FOLDER_PATH/builtin_modules/\"\nfi\nrsync -av --delete \"$NODEJS_ASSETS_DIR/nodejs-project\" \"$CODESIGNING_FOLDER_PATH\"\nrsync -av --delete \"$NODEJS_BUILT_IN_MODULES_DIR/builtin_modules\" \"$CODESIGNING_FOLDER_PATH\"\n";
-		};
-		ABC7B8B85A30EEF5B794CEF2 /* [CP-User] [NODEJS MOBILE] Build Native Modules */ = {
+		44353AD4DD22B6CD0E290127 /* [CP-User] [NODEJS MOBILE] Build Native Modules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -458,7 +350,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\nset -e\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, look for it in the project's\n#nodejs-assets/BUILD_NATIVE_MODULES.txt file.\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nPREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"\n  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"\n  fi\nfi\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, try to find .gyp files\n#to turn it on.\n  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))\n  if [ ${#gypfiles[@]} -gt 0 ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1\n  else\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0\n  fi\nfi\nif [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi\n# Delete object files that may already come from within the npm package.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.node\" -type f -delete\n# Delete bundle contents that may be there from previous builds.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.node/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.node\" -type d -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete\n# Apply patches to the modules package.json\nif [ -d \"$CODESIGNING_FOLDER_PATH\"/nodejs-project/node_modules/ ]; then\n  PATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"\n  NODEJS_PROJECT_MODULES_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/node_modules/ && pwd )\"\n  node \"$PATCH_SCRIPT_DIR\"/patch-package.js $NODEJS_PROJECT_MODULES_DIR\nfi\n# Get the nodejs-mobile-gyp location\nif [ -d \"$PROJECT_DIR/../node_modules/nodejs-mobile-gyp/\" ]; then\n  NODEJS_MOBILE_GYP_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-gyp/ && pwd )\"\nelse\n  NODEJS_MOBILE_GYP_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/node_modules/nodejs-mobile-gyp/ && pwd )\"\nfi\nNODEJS_MOBILE_GYP_BIN_FILE=\"$NODEJS_MOBILE_GYP_DIR\"/bin/node-gyp.js\n# Support building neon-bindings (Rust) native modules\nif [ -f ~/.cargo/env ]; then\n  source ~/.cargo/env;\nfi\n# Rebuild modules with right environment\nNODEJS_HEADERS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/ios/libnode/ && pwd )\"\npushd $CODESIGNING_FOLDER_PATH/nodejs-project/\nif [ \"$PLATFORM_NAME\" == \"iphoneos\" ]\nthen\n  GYP_DEFINES=\"OS=ios\" CARGO_BUILD_TARGET=\"aarch64-apple-ios\" npm_config_nodedir=\"$NODEJS_HEADERS_DIR\" npm_config_node_gyp=\"$NODEJS_MOBILE_GYP_BIN_FILE\" npm_config_platform=\"ios\" npm_config_format=\"make-ios\" npm_config_node_engine=\"chakracore\" npm_config_arch=\"arm64\" npm --verbose rebuild --build-from-source\nelse\n  GYP_DEFINES=\"OS=ios\" CARGO_BUILD_TARGET=\"x86_64-apple-ios\" npm_config_nodedir=\"$NODEJS_HEADERS_DIR\" npm_config_node_gyp=\"$NODEJS_MOBILE_GYP_BIN_FILE\" npm_config_platform=\"ios\" npm_config_format=\"make-ios\" npm_config_node_engine=\"chakracore\" npm_config_arch=\"x64\" npm --verbose rebuild --build-from-source\nfi\npopd\n";
 		};
-		AFC799313636061E73AA0D74 /* [CP] Copy Pods Resources */ = {
+		501F01D2985BD49351B9E106 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,7 +367,17 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1EC1C7FECD8A6D9A2C71B04 /* [CP] Check Pods Manifest.lock */ = {
+		65C3992A56E33C320C44B49B /* [CP-User] [NODEJS MOBILE] Sign Native Modules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [NODEJS MOBILE] Sign Native Modules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nset -e\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, look for it in the project's\n#nodejs-assets/BUILD_NATIVE_MODULES.txt file.\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nPREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"\n  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"\n  fi\nfi\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, try to find .gyp files\n#to turn it on.\n  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))\n  if [ ${#gypfiles[@]} -gt 0 ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1\n  else\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0\n  fi\nfi\nif [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi\n# Delete object files\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete\n# Create Info.plist for each framework built and loader override.\nPATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"\nNODEJS_PROJECT_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/ && pwd )\"\nnode \"$PATCH_SCRIPT_DIR\"/ios-create-plists-and-dlopen-override.js $NODEJS_PROJECT_DIR\n# Embed every resulting .framework in the application and delete them afterwards.\nembed_framework()\n{\n    FRAMEWORK_NAME=\"$(basename \"$1\")\"\n    cp -r \"$1\" \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/\"\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY --preserve-metadata=identifier,entitlements,flags --timestamp=none \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/$FRAMEWORK_NAME\"\n}\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d | while read frmwrk_path; do embed_framework \"$frmwrk_path\"; done\n\n#Delete gyp temporary .deps dependency folders from the project structure.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/.deps/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \".deps\" -type d -delete\n\n#Delete frameworks from their build paths\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete\n";
+		};
+		6F83106E1221D89F1D3480A9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,7 +399,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D89181101D3FFEF066999529 /* [CP] Embed Pods Frameworks */ = {
+		9A1B7D269E08C284430443B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -514,15 +416,64 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitkit/Pods-bitkit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6F6BF0383026B95D432C5E9 /* [CP-User] [NODEJS MOBILE] Sign Native Modules */ = {
+		9E23F4AE5D187F5D09E95E6B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			name = "[CP-User] [NODEJS MOBILE] Sign Native Modules";
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\nset -e\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, look for it in the project's\n#nodejs-assets/BUILD_NATIVE_MODULES.txt file.\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nPREFERENCE_FILE_PATH=\"$NODEJS_ASSETS_DIR/BUILD_NATIVE_MODULES.txt\"\n  if [ -f \"$PREFERENCE_FILE_PATH\" ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=\"$(cat $PREFERENCE_FILE_PATH | xargs)\"\n  fi\nfi\nif [ -z \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then\n# If build native modules preference is not set, try to find .gyp files\n#to turn it on.\n  gypfiles=($(find \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -type f -name \"*.gyp\"))\n  if [ ${#gypfiles[@]} -gt 0 ]; then\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=1\n  else\n    NODEJS_MOBILE_BUILD_NATIVE_MODULES=0\n  fi\nfi\nif [ \"1\" != \"$NODEJS_MOBILE_BUILD_NATIVE_MODULES\" ]; then exit 0; fi\n# Delete object files\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.o\" -type f -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.a\" -type f -delete\n# Create Info.plist for each framework built and loader override.\nPATCH_SCRIPT_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/scripts/ && pwd )\"\nNODEJS_PROJECT_DIR=\"$( cd \"$CODESIGNING_FOLDER_PATH\" && cd nodejs-project/ && pwd )\"\nnode \"$PATCH_SCRIPT_DIR\"/ios-create-plists-and-dlopen-override.js $NODEJS_PROJECT_DIR\n# Embed every resulting .framework in the application and delete them afterwards.\nembed_framework()\n{\n    FRAMEWORK_NAME=\"$(basename \"$1\")\"\n    cp -r \"$1\" \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/\"\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY --preserve-metadata=identifier,entitlements,flags --timestamp=none \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/$FRAMEWORK_NAME\"\n}\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d | while read frmwrk_path; do embed_framework \"$frmwrk_path\"; done\n\n#Delete gyp temporary .deps dependency folders from the project structure.\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/.deps/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \".deps\" -type d -delete\n\n#Delete frameworks from their build paths\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -path \"*/*.framework/*\" -delete\nfind \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" -name \"*.framework\" -type d -delete\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-bitkit-bitkitTests/Pods-bitkit-bitkitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B44482AE31E3945A11495E38 /* [CP-User] [NODEJS MOBILE] Copy Node.js Project files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [NODEJS MOBILE] Copy Node.js Project files";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nset -e\nNODEJS_ASSETS_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../nodejs-assets/ && pwd )\"\nNODEJS_BUILT_IN_MODULES_DIR=\"$( cd \"$PROJECT_DIR\" && cd ../node_modules/nodejs-mobile-react-native/install/resources/nodejs-modules/ && pwd )\"\nif [ -d \"$CODESIGNING_FOLDER_PATH/nodejs-project/\" ]\nthen\nrm -rf \"$CODESIGNING_FOLDER_PATH/nodejs-project/\"\nfi\nif [ -d \"$CODESIGNING_FOLDER_PATH/builtin_modules/\" ]\nthen\nrm -rf \"$CODESIGNING_FOLDER_PATH/builtin_modules/\"\nfi\nrsync -av --delete \"$NODEJS_ASSETS_DIR/nodejs-project\" \"$CODESIGNING_FOLDER_PATH\"\nrsync -av --delete \"$NODEJS_BUILT_IN_MODULES_DIR/builtin_modules\" \"$CODESIGNING_FOLDER_PATH\"\n";
+		};
+		C4B5EB8A1CCED918DC4D8A04 /* [CP-User] [NODEJS MOBILE] Remove Simulator Strip */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] [NODEJS MOBILE] Remove Simulator Strip";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nset -e\nFRAMEWORK_BINARY_PATH=\"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/NodeMobile.framework/NodeMobile\"\nFRAMEWORK_STRIPPED_PATH=\"$FRAMEWORK_BINARY_PATH-strip\"\nif [ \"$PLATFORM_NAME\" != \"iphonesimulator\" ]; then\n  if $(lipo \"$FRAMEWORK_BINARY_PATH\" -verify_arch \"x86_64\") ; then\n    lipo -output \"$FRAMEWORK_STRIPPED_PATH\" -remove \"x86_64\" \"$FRAMEWORK_BINARY_PATH\"\n    rm \"$FRAMEWORK_BINARY_PATH\"\n    mv \"$FRAMEWORK_STRIPPED_PATH\" \"$FRAMEWORK_BINARY_PATH\"\n    echo \"Removed simulator strip from NodeMobile.framework\"\n  fi\nfi\n";
+		};
+		EA33F284C5D0597FD9365714 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bitkit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -576,7 +527,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCDF1208A02053ABBA389591 /* Pods-bitkit-bitkitTests.debug.xcconfig */;
+			baseConfigurationReference = 56F12652C740A45379559906 /* Pods-bitkit-bitkitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -585,7 +536,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = bitkitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,13 +555,13 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD29565B823C602A455F3915 /* Pods-bitkit-bitkitTests.release.xcconfig */;
+			baseConfigurationReference = D26DB1F7C0D65ADEE62A33D0 /* Pods-bitkit-bitkitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = bitkitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,7 +580,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E86BDF74391D44C804A26606 /* Pods-bitkit.debug.xcconfig */;
+			baseConfigurationReference = 5D45C09608FF6E7A97BA25C1 /* Pods-bitkit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -660,7 +611,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F439A6B4907FDD37084E373 /* Pods-bitkit.release.xcconfig */;
+			baseConfigurationReference = 5419F5D6F1BC550374C18282 /* Pods-bitkit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -737,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -755,6 +706,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -801,7 +753,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -818,6 +770,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

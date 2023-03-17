@@ -1,6 +1,13 @@
+import './shim';
+import 'intl';
+import 'intl/locale-data/jsonp/en';
+import 'intl/locale-data/jsonp/ru';
+
 import { AppRegistry, LogBox, Text, TextInput } from 'react-native';
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 
+//import App from './App';
+//import Root from './TestApp';
 import Root from './Root';
 import { name as appName } from './app.json';
 
