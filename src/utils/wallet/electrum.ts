@@ -44,6 +44,20 @@ export type TUnspentAddressScriptHashData = {
 };
 
 /**
+ * Check if app is connected to Electrum Server.
+ * @returns {Promise<boolean>}
+ */
+export const isConnectedElectrum = async (): Promise<boolean> => {
+	const { error } = await electrum.pingServer();
+
+	if (error) {
+		return false;
+	} else {
+		return true;
+	}
+};
+
+/**
  * Returns UTXO's for a given wallet and network along with the available balance.
  * @param {TWalletName} [selectedWallet]
  * @param {TAvailableNetworks} [selectedNetwork]
@@ -76,52 +90,50 @@ export const getUtxos = async ({
 		let changeAddresses = {} as IAddresses;
 		let existingUtxos: { [key: string]: IUtxo } = {};
 
-		await Promise.all(
-			addressTypes.map(async (addressType) => {
-				if (!selectedNetwork) {
-					selectedNetwork = getSelectedNetwork();
-				}
-				if (!selectedWallet) {
-					selectedWallet = getSelectedWallet();
-				}
-				const addressCount = Object.keys(
-					currentWallet.addresses[selectedNetwork][addressType],
-				)?.length;
-				// Check if addresses of this type have been generated. If not, skip.
-				if (addressCount <= 0) {
-					return;
-				}
+		addressTypes.map((addressType) => {
+			if (!selectedNetwork) {
+				selectedNetwork = getSelectedNetwork();
+			}
+			if (!selectedWallet) {
+				selectedWallet = getSelectedWallet();
+			}
+			const addressCount = Object.keys(
+				currentWallet.addresses[selectedNetwork][addressType],
+			)?.length;
+			// Check if addresses of this type have been generated. If not, skip.
+			if (addressCount <= 0) {
+				return;
+			}
 
-				// Grab the current index for both addresses and change addresses.
-				const addressIndex =
-					currentWallet.addressIndex[selectedNetwork][addressType].index;
-				const changeAddressIndex =
-					currentWallet.changeAddressIndex[selectedNetwork][addressType].index;
+			// Grab the current index for both addresses and change addresses.
+			const addressIndex =
+				currentWallet.addressIndex[selectedNetwork][addressType].index;
+			const changeAddressIndex =
+				currentWallet.changeAddressIndex[selectedNetwork][addressType].index;
 
-				// Grab all addresses and change addresses.
-				const allAddresses =
-					currentWallet.addresses[selectedNetwork][addressType];
-				const allChangeAddresses =
-					currentWallet.changeAddresses[selectedNetwork][addressType];
+			// Grab all addresses and change addresses.
+			const allAddresses =
+				currentWallet.addresses[selectedNetwork][addressType];
+			const allChangeAddresses =
+				currentWallet.changeAddresses[selectedNetwork][addressType];
 
-				// Instead of scanning all addresses, adhere to the gap limit.
-				if (!scanAllAddresses && addressIndex >= 0 && changeAddressIndex >= 0) {
-					Object.values(allAddresses).map((a) => {
-						if (Math.abs(a.index - addressIndex) <= GAP_LIMIT) {
-							addresses[a.scriptHash] = a;
-						}
-					});
-					Object.values(allChangeAddresses).map((a) => {
-						if (Math.abs(a.index - changeAddressIndex) <= GAP_LIMIT) {
-							changeAddresses[a.scriptHash] = a;
-						}
-					});
-				} else {
-					addresses = { ...addresses, ...allAddresses };
-					changeAddresses = { ...changeAddresses, ...allChangeAddresses };
-				}
-			}),
-		);
+			// Instead of scanning all addresses, adhere to the gap limit.
+			if (!scanAllAddresses && addressIndex >= 0 && changeAddressIndex >= 0) {
+				Object.values(allAddresses).map((a) => {
+					if (Math.abs(a.index - addressIndex) <= GAP_LIMIT) {
+						addresses[a.scriptHash] = a;
+					}
+				});
+				Object.values(allChangeAddresses).map((a) => {
+					if (Math.abs(a.index - changeAddressIndex) <= GAP_LIMIT) {
+						changeAddresses[a.scriptHash] = a;
+					}
+				});
+			} else {
+				addresses = { ...addresses, ...allAddresses };
+				changeAddresses = { ...changeAddresses, ...allChangeAddresses };
+			}
+		});
 
 		// Make sure we're re-check existing utxos that may exist outside the gap limit and putting them in the necessary format.
 		currentWallet.utxos[selectedNetwork].map((utxo) => {
@@ -612,10 +624,10 @@ export const getAddressHistory = async ({
 		}
 
 		const history: IGetAddressHistoryResponse[] = [];
-		combinedResponse.map(
+		combinedResponse.forEach(
 			({ data, result }: { data: IAddress; result: TTxResult[] }): void => {
 				if (result && result?.length > 0) {
-					result.map((item) => {
+					result.forEach((item) => {
 						history.push({ ...data, ...item });
 					});
 				}

@@ -1,5 +1,11 @@
-import React, { ReactElement, useCallback, useMemo, memo } from 'react';
-import { Platform } from 'react-native';
+import React, {
+	ReactElement,
+	useCallback,
+	memo,
+	useEffect,
+	useRef,
+} from 'react';
+import { AppState, Platform } from 'react-native';
 import { useSelector } from 'react-redux';
 import { createNavigationContainerRef } from '@react-navigation/native';
 import {
@@ -9,13 +15,16 @@ import {
 } from '@react-navigation/stack';
 
 import { NavigationContainer } from '../../styles/components';
+import { processInputData } from '../../utils/scanner';
+import { readClipboardData } from '../../utils/send';
 import Store from '../../store/types';
+import { enableAutoReadClipboardSelector } from '../../store/reselect/settings';
 import AuthCheck from '../../components/AuthCheck';
-import Biometrics from '../../components/Biometrics';
 import WalletNavigator from '../wallet/WalletNavigator';
 import ActivityDetail from '../../screens/Activity/ActivityDetail';
 import ActivityAssignContact from '../../screens/Activity/ActivityAssignContact';
 import BuyBitcoin from '../../screens/BuyBitcoin';
+import BetaRisk from '../../screens/BetaRisk';
 import ScannerScreen from '../../screens/Scanner/MainScanner';
 import SettingsNavigator from '../settings/SettingsNavigator';
 import LightningNavigator from '../lightning/LightningNavigator';
@@ -28,6 +37,7 @@ import Profile from '../../screens/Profile/Profile';
 import ProfileEdit from '../../screens/Profile/ProfileEdit';
 import ProfileAddLink from '../../screens/Profile/ProfileAddLink';
 import ProfileLinkSuggestions from '../../screens/Profile/ProfileLinkSuggestions';
+import ProfileDetails from '../../screens/Profile/ProfileDetails';
 import Contacts from '../../screens/Contacts/Contacts';
 import Contact from '../../screens/Contacts/Contact';
 import ContactEdit from '../../screens/Contacts/ContactEdit';
@@ -76,43 +86,96 @@ export const rootNavigation = {
 export type TInitialRoutes = 'Wallet' | 'RootAuthCheck';
 
 const RootNavigator = (): ReactElement => {
+	const appState = useRef(AppState.currentState);
 	const pin = useSelector((state: Store) => state.settings.pin);
 	const pinOnLaunch = useSelector((state: Store) => state.settings.pinOnLaunch);
-	const initialRouteName: TInitialRoutes = useMemo(
-		() => (pin && pinOnLaunch ? 'RootAuthCheck' : 'Wallet'),
-		[pin, pinOnLaunch],
-	);
+	const enableAutoReadClipboard = useSelector(enableAutoReadClipboardSelector);
+
+	const showAuth = pin && pinOnLaunch;
+	const initialRouteName: TInitialRoutes = showAuth
+		? 'RootAuthCheck'
+		: 'Wallet';
+
+	const linking = {
+		prefixes: ['slash'],
+		getStateFromPath(path, _config): any {
+			if (!pin) {
+				processInputData({ data: `slash${path}` });
+			} else {
+				return {
+					routes: [
+						{
+							name: 'RootAuthCheck',
+							params: {
+								onSuccess: (): void => {
+									rootNavigation.navigate('Wallet');
+									processInputData({ data: `slash${path}` });
+								},
+							},
+						},
+					],
+				};
+			}
+		},
+	};
+
+	useEffect(() => {
+		if (enableAutoReadClipboard && !showAuth) {
+			readClipboardData().then();
+		}
+
+		// on App to foreground
+		const appStateSubscription = AppState.addEventListener(
+			'change',
+			(nextAppState) => {
+				if (appState.current.match(/background/) && nextAppState === 'active') {
+					const currentRoute = navigationRef.getCurrentRoute()?.name;
+					// prevent redirecting while on AuthCheck
+					if (enableAutoReadClipboard && currentRoute !== 'RootAuthCheck') {
+						readClipboardData().then();
+					}
+				}
+
+				appState.current = nextAppState;
+			},
+		);
+
+		return () => {
+			appStateSubscription.remove();
+		};
+	}, [enableAutoReadClipboard, showAuth]);
 
 	const AuthCheckComponent = useCallback(
-		({ navigation }: RootStackScreenProps<'RootAuthCheck'>): ReactElement => {
+		({
+			navigation,
+			route,
+		}: RootStackScreenProps<'RootAuthCheck'>): ReactElement => {
+			const onSuccess = (): void => {
+				if (route.params?.onSuccess) {
+					route.params.onSuccess();
+				} else {
+					navigation.replace('Wallet');
+
+					// check clipboard for payment data
+					if (enableAutoReadClipboard) {
+						readClipboardData().then();
+					}
+				}
+			};
+
 			return (
 				<AuthCheck
 					showLogoOnPIN={true}
 					showBackNavigation={false}
-					onSuccess={(): void => {
-						navigation.replace('Wallet');
-					}}
+					onSuccess={onSuccess}
 				/>
 			);
 		},
-		[],
-	);
-
-	const BiometricsComponent = useCallback(
-		({ navigation }: RootStackScreenProps<'Biometrics'>): ReactElement => {
-			return (
-				<Biometrics
-					onSuccess={(): void => {
-						navigation.replace('Wallet');
-					}}
-				/>
-			);
-		},
-		[],
+		[enableAutoReadClipboard],
 	);
 
 	return (
-		<NavigationContainer ref={navigationRef}>
+		<NavigationContainer ref={navigationRef} linking={linking}>
 			<Stack.Navigator
 				screenOptions={navOptions}
 				// adding this because we are using @react-navigation/stack instead of
@@ -123,7 +186,6 @@ const RootNavigator = (): ReactElement => {
 				<Stack.Group screenOptions={navOptions}>
 					<Stack.Screen name="RootAuthCheck" component={AuthCheckComponent} />
 					<Stack.Screen name="Wallet" component={WalletNavigator} />
-					<Stack.Screen name="Biometrics" component={BiometricsComponent} />
 					<Stack.Screen name="ActivityDetail" component={ActivityDetail} />
 					<Stack.Screen
 						name="ActivityAssignContact"
@@ -144,10 +206,12 @@ const RootNavigator = (): ReactElement => {
 						name="ProfileLinkSuggestions"
 						component={ProfileLinkSuggestions}
 					/>
+					<Stack.Screen name="ProfileDetails" component={ProfileDetails} />
 					<Stack.Screen name="Contacts" component={Contacts} />
 					<Stack.Screen name="ContactEdit" component={ContactEdit} />
 					<Stack.Screen name="Contact" component={Contact} />
 					<Stack.Screen name="BuyBitcoin" component={BuyBitcoin} />
+					<Stack.Screen name="BetaRisk" component={BetaRisk} />
 					<Stack.Screen name="WidgetFeedEdit" component={WidgetFeedEdit} />
 					<Stack.Screen name="WidgetsRoot" component={WidgetsNavigator} />
 				</Stack.Group>

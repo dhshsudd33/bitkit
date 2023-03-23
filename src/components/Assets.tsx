@@ -21,6 +21,7 @@ const Assets = (): ReactElement => {
 			</Subtitle>
 			<AssetCard
 				name="Bitcoin"
+				testID="BitcoinAsset"
 				ticker="BTC"
 				satoshis={satoshis}
 				icon={<BitcoinCircleIcon />}
@@ -37,7 +38,7 @@ const Assets = (): ReactElement => {
 const styles = StyleSheet.create({
 	title: {
 		marginTop: 32,
-		marginBottom: 8,
+		marginBottom: 23,
 	},
 });
 

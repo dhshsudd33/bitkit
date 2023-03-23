@@ -31,6 +31,7 @@ import {
 	removeDuplicateAddresses,
 } from '../../utils/wallet';
 import {
+	getBlocktankStore,
 	getDispatch,
 	getFeesStore,
 	getSettingsStore,
@@ -165,14 +166,10 @@ export const updateAddressIndexes = async ({
 		selectedWallet,
 		selectedNetwork,
 	});
-	const addressTypes = getAddressTypes();
-	let addressTypesToCheck = Object.keys(addressTypes) as EAddressType[];
+
+	let addressTypesToCheck = Object.keys(getAddressTypes()) as EAddressType[];
 	if (addressType) {
-		addressTypesToCheck = await Promise.all(
-			addressTypesToCheck.filter(
-				(_addressType) => _addressType === addressType,
-			),
-		);
+		addressTypesToCheck = [addressType];
 	}
 
 	let updated = false;
@@ -192,42 +189,40 @@ export const updateAddressIndexes = async ({
 		if (response.isErr()) {
 			throw response.error;
 		}
+		const result = response.value;
 
-		const { type } = addressTypes[addressTypeKey];
-		let addressIndex = currentWallet.addressIndex[selectedNetwork][type];
+		let addressIndex =
+			currentWallet.addressIndex[selectedNetwork][addressTypeKey];
 		let changeAddressIndex =
-			currentWallet.changeAddressIndex[selectedNetwork][type];
+			currentWallet.changeAddressIndex[selectedNetwork][addressTypeKey];
 		let lastUsedAddressIndex =
-			currentWallet.lastUsedAddressIndex[selectedNetwork][type];
+			currentWallet.lastUsedAddressIndex[selectedNetwork][addressTypeKey];
 		let lastUsedChangeAddressIndex =
-			currentWallet.lastUsedChangeAddressIndex[selectedNetwork][type];
+			currentWallet.lastUsedChangeAddressIndex[selectedNetwork][addressTypeKey];
 
 		if (
-			currentWallet.addressIndex[selectedNetwork][type]?.index < 0 ||
-			currentWallet.changeAddressIndex[selectedNetwork][type]?.index < 0 ||
-			response.value?.addressIndex?.index >
-				currentWallet.addressIndex[selectedNetwork][type]?.index ||
-			response.value?.changeAddressIndex?.index >
-				currentWallet.changeAddressIndex[selectedNetwork][type]?.index ||
-			response.value?.lastUsedAddressIndex?.index >
-				currentWallet.lastUsedAddressIndex[selectedNetwork][type]?.index ||
-			response.value?.lastUsedChangeAddressIndex?.index >
-				currentWallet.lastUsedChangeAddressIndex[selectedNetwork][type]?.index
+			addressIndex.index < 0 ||
+			changeAddressIndex.index < 0 ||
+			result.addressIndex.index > addressIndex.index ||
+			result.changeAddressIndex.index > changeAddressIndex.index ||
+			result.lastUsedAddressIndex.index > lastUsedAddressIndex.index ||
+			result.lastUsedChangeAddressIndex.index >
+				lastUsedChangeAddressIndex?.index
 		) {
-			if (response.value?.addressIndex) {
-				addressIndex = response.value.addressIndex;
+			if (result.addressIndex) {
+				addressIndex = result.addressIndex;
 			}
 
-			if (response.value?.changeAddressIndex) {
-				changeAddressIndex = response.value?.changeAddressIndex;
+			if (result.changeAddressIndex) {
+				changeAddressIndex = result.changeAddressIndex;
 			}
 
-			if (response.value?.lastUsedAddressIndex) {
-				lastUsedAddressIndex = response.value.lastUsedAddressIndex;
+			if (result.lastUsedAddressIndex) {
+				lastUsedAddressIndex = result.lastUsedAddressIndex;
 			}
 
-			if (response.value?.lastUsedChangeAddressIndex) {
-				lastUsedChangeAddressIndex = response.value?.lastUsedChangeAddressIndex;
+			if (result.lastUsedChangeAddressIndex) {
+				lastUsedChangeAddressIndex = result.lastUsedChangeAddressIndex;
 			}
 
 			dispatch({
@@ -274,9 +269,10 @@ export const resetAddressIndexes = ({
 	}
 
 	const addressTypes = getAddressTypes();
-	const addressTypeKeys = Object.keys(addressTypes) as EAddressType[];
+	const addressTypeKeys = objectKeys(addressTypes);
 	const defaultWalletShape = getDefaultWalletShape();
-	addressTypeKeys.map((addressType) => {
+
+	addressTypeKeys.forEach((addressType) => {
 		dispatch({
 			type: actions.UPDATE_ADDRESS_INDEX,
 			payload: {
@@ -356,23 +352,21 @@ export const generateNewReceiveAddress = async ({
 		const addresses = currentWallet.addresses[selectedNetwork][addressType];
 		const currentAddressIndex =
 			currentWallet.addressIndex[selectedNetwork][addressType].index;
-		const nextAddressIndex = await Promise.all(
-			Object.values(addresses).filter((address) => {
-				return address.index === currentAddressIndex + 1;
-			}),
-		);
+		const nextAddressIndex = Object.values(addresses).find((address) => {
+			return address.index === currentAddressIndex + 1;
+		});
 
 		// Check if the next address index already exists or if it needs to be generated.
-		if (nextAddressIndex?.length > 0) {
+		if (nextAddressIndex) {
 			// Update addressIndex and return the address content.
 			dispatch({
 				type: actions.UPDATE_ADDRESS_INDEX,
 				payload: {
-					addressIndex: nextAddressIndex[0],
+					addressIndex: nextAddressIndex,
 					addressType,
 				},
 			});
-			return ok(nextAddressIndex[0]);
+			return ok(nextAddressIndex);
 		}
 
 		// We need to generate, save and return the new address.
@@ -473,13 +467,12 @@ export const addAddresses = async ({
 		selectedWallet,
 		selectedNetwork,
 	});
-
 	if (removeDuplicateResponse.isErr()) {
 		return err(removeDuplicateResponse.error.message);
 	}
 
-	const addresses = removeDuplicateResponse.value?.addresses ?? {};
-	const changeAddresses = removeDuplicateResponse.value?.changeAddresses ?? {};
+	const addresses = removeDuplicateResponse.value.addresses;
+	const changeAddresses = removeDuplicateResponse.value.changeAddresses;
 	if (!Object.keys(addresses).length && !Object.keys(changeAddresses).length) {
 		return err('No addresses to add.');
 	}
@@ -501,7 +494,7 @@ export const addAddresses = async ({
  * 1. Update UTXO data for all addresses and change addresses for a given wallet and network.
  * 2. Update the available balance for a given wallet and network.
  */
-export const updateUtxos = ({
+export const updateUtxos = async ({
 	selectedWallet,
 	selectedNetwork,
 	scanAllAddresses = false,
@@ -510,46 +503,44 @@ export const updateUtxos = ({
 	selectedNetwork?: TAvailableNetworks;
 	scanAllAddresses?: boolean;
 }): Promise<Result<{ utxos: IUtxo[]; balance: number }>> => {
-	return new Promise(async (resolve) => {
-		if (!selectedNetwork) {
-			selectedNetwork = getSelectedNetwork();
-		}
-		if (!selectedWallet) {
-			selectedWallet = getSelectedWallet();
-		}
+	if (!selectedNetwork) {
+		selectedNetwork = getSelectedNetwork();
+	}
+	if (!selectedWallet) {
+		selectedWallet = getSelectedWallet();
+	}
 
-		const utxoResponse = await getUtxos({
-			selectedWallet,
-			selectedNetwork,
-			scanAllAddresses,
-		});
-		if (utxoResponse.isErr()) {
-			return resolve(err(utxoResponse.error));
-		}
-		const { utxos, balance } = utxoResponse.value;
-		// Ensure we're not adding any duplicates.
-		const filteredUtxos = utxos.filter(
-			(utxo, index, _utxos) =>
-				index ===
-				_utxos.findIndex(
-					(u) =>
-						u.scriptHash === utxo.scriptHash &&
-						u.tx_pos === utxo.tx_pos &&
-						u.tx_hash === utxo.tx_hash,
-				),
-		);
-		const payload = {
-			selectedWallet,
-			selectedNetwork,
-			utxos: filteredUtxos,
-			balance,
-		};
-		dispatch({
-			type: actions.UPDATE_UTXOS,
-			payload,
-		});
-		return resolve(ok(payload));
+	const utxoResponse = await getUtxos({
+		selectedWallet,
+		selectedNetwork,
+		scanAllAddresses,
 	});
+	if (utxoResponse.isErr()) {
+		return err(utxoResponse.error);
+	}
+	const { utxos, balance } = utxoResponse.value;
+	// Ensure we're not adding any duplicates.
+	const filteredUtxos = utxos.filter(
+		(utxo, index, _utxos) =>
+			index ===
+			_utxos.findIndex(
+				(u) =>
+					u.scriptHash === utxo.scriptHash &&
+					u.tx_pos === utxo.tx_pos &&
+					u.tx_hash === utxo.tx_hash,
+			),
+	);
+	const payload = {
+		selectedWallet,
+		selectedNetwork,
+		utxos: filteredUtxos,
+		balance,
+	};
+	dispatch({
+		type: actions.UPDATE_UTXOS,
+		payload,
+	});
+	return ok(payload);
 };
 
 /**
@@ -704,10 +695,18 @@ export const updateTransactions = async ({
 	}
 	const formattedTransactions: IFormattedTransactions = {};
 	const storedTransactions = currentWallet.transactions[selectedNetwork];
+	const blocktankOrders = getBlocktankStore().orders;
 
 	let notificationTxid: string | undefined;
 
 	Object.keys(formatTransactionsResponse.value).forEach((txid) => {
+		// check if tx is a payment from Blocktank (i.e. transfer to savings)
+		const isTransferToSavings = !!blocktankOrders.find((order) => {
+			return !!formatTransactionsResponse.value[txid].vin.find(
+				(input) => input.txid === order.channel_close_tx?.transaction_id,
+			);
+		});
+
 		//If the tx is new or the tx now has a block height (state changed to confirmed)
 		if (
 			!storedTransactions[txid] ||
@@ -717,10 +716,11 @@ export const updateTransactions = async ({
 			formattedTransactions[txid] = formatTransactionsResponse.value[txid];
 		}
 
-		// if the tx is new incoming - show notification
+		// if the tx is new, incoming but not from a transfer - show notification
 		if (
 			!storedTransactions[txid] &&
-			formatTransactionsResponse.value[txid].type === EPaymentType.received
+			formatTransactionsResponse.value[txid].type === EPaymentType.received &&
+			!isTransferToSavings
 		) {
 			notificationTxid = txid;
 		}
@@ -1545,39 +1545,32 @@ export const setZeroIndexAddresses = async ({
 		});
 	}
 
-	if (
-		addressIndexInfo.addressIndex.index >= 0 &&
-		addressIndexInfo.changeAddressIndex.index >= 0
-	) {
+	const addressIndex = addressIndexInfo.addressIndex;
+	const changeAddressIndex = addressIndexInfo.changeAddressIndex;
+
+	if (addressIndex.index >= 0 && changeAddressIndex.index >= 0) {
 		return ok('No need to set indexes.');
 	}
 
-	let addressIndex = addressIndexInfo.addressIndex;
-	let changeAddressIndex = addressIndexInfo.changeAddressIndex;
-
-	let payload: {
+	const currentWallet = getWalletStore().wallets[selectedWallet];
+	const payload: {
 		addressIndex?: IAddress;
 		changeAddressIndex?: IAddress;
 	} = {};
 
 	if (addressIndex.index < 0) {
-		const addresses =
-			getWalletStore().wallets[selectedWallet]?.addresses[selectedNetwork][
-				addressType
-			];
-		const filterRes = Object.values(addresses).find((a) => a.index === 0);
-		if (filterRes) {
-			payload.addressIndex = filterRes;
+		const addresses = currentWallet?.addresses[selectedNetwork][addressType];
+		const address = Object.values(addresses).find((a) => a.index === 0);
+		if (address) {
+			payload.addressIndex = address;
 		}
 	}
 	if (changeAddressIndex.index < 0) {
 		const changeAddresses =
-			getWalletStore().wallets[selectedWallet]?.changeAddresses[
-				selectedNetwork
-			][addressType];
-		const filterRes = Object.values(changeAddresses).find((a) => a.index === 0);
-		if (filterRes) {
-			payload.changeAddressIndex = filterRes;
+			currentWallet?.changeAddresses[selectedNetwork][addressType];
+		const address = Object.values(changeAddresses).find((a) => a.index === 0);
+		if (address) {
+			payload.changeAddressIndex = address;
 		}
 	}
 
@@ -1588,5 +1581,6 @@ export const setZeroIndexAddresses = async ({
 			addressType,
 		},
 	});
+
 	return ok('Set Zero Index Addresses.');
 };

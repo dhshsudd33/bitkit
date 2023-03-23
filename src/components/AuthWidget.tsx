@@ -26,12 +26,14 @@ const AuthWidget = ({
 	isEditing = false,
 	onLongPress,
 	onPressIn,
+	testID,
 }: {
 	url: string;
 	widget: IWidget;
 	isEditing?: boolean;
 	onLongPress?: () => void;
 	onPressIn?: () => void;
+	testID?: string;
 }): ReactElement => {
 	const { t } = useTranslation('slashtags');
 	const [showButtons, setShowButtons] = useState(false);
@@ -77,7 +79,8 @@ const AuthWidget = ({
 			onPress={switchShowButtons}
 			onLongPress={onLongPress}
 			onPressIn={onPressIn}
-			activeOpacity={0.9}>
+			activeOpacity={0.9}
+			testID={testID}>
 			<View style={styles.left}>
 				<ProfileImage
 					style={styles.icon}
@@ -114,7 +117,7 @@ const AuthWidget = ({
 			</View>
 			<Dialog
 				visible={showDialog}
-				title={t('widget_delete_title', { name: profile.name })}
+				title={t('widget_delete_title')}
 				description={t('widget_delete_desc', { name: profile.name })}
 				confirmText={t('widget_delete_yes')}
 				onCancel={(): void => {

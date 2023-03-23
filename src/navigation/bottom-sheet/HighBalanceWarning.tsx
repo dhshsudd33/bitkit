@@ -2,6 +2,7 @@ import React, { memo, ReactElement, useEffect, useMemo } from 'react';
 import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { DISABLE_PERIODIC_REMINDERS } from '@env';
+import { useTranslation } from 'react-i18next';
 
 import { Caption13Up, Display, Text02S } from '../../styles/text';
 import BottomSheetWrapper from '../../components/BottomSheetWrapper';
@@ -29,8 +30,14 @@ import {
 
 const imageSrc = require('../../assets/illustrations/exclamation-mark.png');
 
-const BALANCE_THRESHOLD_USD = 1000; // how high the balance must be to show this warning to the user (in USD)
-const BALANCE_THRESHOLD_SATS = 5000000; // how high the balance must be to show this warning to the user (in Sats)
+// TODO: change back after beta
+// BALANCE_THRESHOLD_USD = 1000
+// BALANCE_THRESHOLD_SATS = 5000000
+// high_text2_beta -> high_text2
+// and remove BETA variable
+const BETA = true;
+const BALANCE_THRESHOLD_USD = 100; // how high the balance must be to show this warning to the user (in USD)
+const BALANCE_THRESHOLD_SATS = 500000; // how high the balance must be to show this warning to the user (in Sats)
 const MAX_WARNINGS = 3; // how many times to show this warning to the user
 const ASK_INTERVAL = 1000 * 60 * 60 * 24; // 1 day - how long this prompt will be hidden if user taps Later
 const CHECK_DELAY = 3000; // how long user needs to stay on Wallets screen before he will see this prompt
@@ -41,7 +48,7 @@ const Amount = ({ style }: { style?: StyleProp<ViewStyle> }): ReactElement => {
 			<Display style={aStyles.symbol} color="gray2">
 				$
 			</Display>
-			<Display>1,000</Display>
+			<Display>{BALANCE_THRESHOLD_USD}</Display>
 		</View>
 	);
 };
@@ -60,6 +67,7 @@ const HighBalanceWarning = ({
 }: {
 	enabled: boolean;
 }): ReactElement => {
+	const { t } = useTranslation('other');
 	const snapPoints = useSnapPoints('medium');
 	const insets = useSafeAreaInsets();
 	const balance = useBalance({ onchain: true, lightning: true });
@@ -154,35 +162,38 @@ const HighBalanceWarning = ({
 			onClose={ignoreHighBalance}>
 			<View style={styles.root}>
 				<BottomSheetNavigationHeader
-					title="High Wallet Balance (!)"
+					title={t('high_title')}
 					displayBackButton={false}
 				/>
 
 				<View style={styles.amountContainer}>
-					<Caption13Up color="gray1">Wallet balance exceeds</Caption13Up>
+					<Caption13Up color="gray1">{t('high_text1')}</Caption13Up>
 					<Amount style={styles.amount} />
 				</View>
 
 				<Text02S style={styles.text} color="gray1">
-					For safety reasons, we recommend moving some of your savings to an
-					offline cold wallet or multisig solution.
+					{t('high_text2_beta')}
 				</Text02S>
 
 				<GlowImage image={imageSrc} imageSize={180} glowColor="yellow" />
 
 				<View style={buttonContainerStyles}>
+					{!BETA && (
+						<>
+							<Button
+								style={styles.button}
+								variant="secondary"
+								size="large"
+								text={t('high_button_more')}
+								onPress={onMore}
+							/>
+							<View style={styles.divider} />
+						</>
+					)}
 					<Button
 						style={styles.button}
-						variant="secondary"
 						size="large"
-						text="Learn More"
-						onPress={onMore}
-					/>
-					<View style={styles.divider} />
-					<Button
-						style={styles.button}
-						size="large"
-						text="Understood"
+						text={t('understood')}
 						onPress={onDismiss}
 					/>
 				</View>

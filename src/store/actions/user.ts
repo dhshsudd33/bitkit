@@ -33,8 +33,18 @@ export const ignoreHighBalance = (final = false): Result<string> => {
 	return ok('');
 };
 
+export const acceptBetaRisk = (): Result<string> => {
+	dispatch({ type: actions.ACCEPT_BETA_RISK });
+	return ok('');
+};
+
 export const startCoopCloseTimer = (): Result<string> => {
 	dispatch({ type: actions.START_COOP_CLOSE_TIMER });
+	return ok('');
+};
+
+export const clearCoopCloseTimer = (): Result<string> => {
+	dispatch({ type: actions.CLEAR_COOP_CLOSE_TIMER });
 	return ok('');
 };
 

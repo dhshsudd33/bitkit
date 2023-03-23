@@ -333,6 +333,7 @@ describe('Settings', () => {
 			await element(by.id('OK')).tap();
 			await element(by.id('OK')).tap();
 			await element(by.id('OK')).tap();
+			await element(by.id('OK')).tap();
 			await sleep(1000);
 			markComplete('s6');
 		});
@@ -346,12 +347,13 @@ describe('Settings', () => {
 			// wallet be in regtest mode by default
 			// at first check if it is Native segwit by default
 			await element(by.id('Receive')).tap();
+			await element(by.id('UnderstoodButton')).tap();
 			await sleep(1000); // animation
 			// get address from qrcode
 			const { label: address } = await element(by.id('QRCode')).getAttributes();
 			// because we can't use Jest expect in Detox tests, let's just throw an error if there is one
 			if (!address.startsWith('bitcoin:bcrt1')) {
-				throw new Error('Wrong receiving address');
+				throw new Error(`Wrong receiving address: ${address}`);
 			}
 			await element(by.id('ReceiveScreen')).swipe('down'); // close Receive screen
 			await sleep(1000);
@@ -367,13 +369,13 @@ describe('Settings', () => {
 			let { text: text1 } = await element(by.id('Address-0')).getAttributes();
 			text1 = text1.replace('0: ', '');
 			if (!text1.startsWith('bcrt1')) {
-				throw new Error('Wrong address at index 0');
+				throw new Error(`Wrong address at index 0: ${text1}`);
 			}
 
 			// check path
 			const { text: path1 } = await element(by.id('Path')).getAttributes();
 			if (!path1.includes("m/84'/0'/0'")) {
-				throw new Error('Wrong path');
+				throw new Error(`Wrong path: ${path1}`);
 			}
 
 			// now switch to Legacy
@@ -389,14 +391,14 @@ describe('Settings', () => {
 				.withTimeout(30000);
 			let { text: text2 } = await element(by.id('Address-0')).getAttributes();
 			text2 = text2.replace('0: ', '');
-			if (!text2.startsWith('m')) {
-				throw new Error('Wrong address at index 0');
+			if (!text2.startsWith('m') && !text2.startsWith('n')) {
+				throw new Error(`Wrong address at index 0: ${text2}`);
 			}
 
 			// check path
 			const { text: path2 } = await element(by.id('Path')).getAttributes();
 			if (!path2.includes("m/44'/0'/0'")) {
-				throw new Error('Wrong path');
+				throw new Error(`Wrong path: ${path2}`);
 			}
 			await element(by.id('NavigationClose')).tap();
 
@@ -406,8 +408,8 @@ describe('Settings', () => {
 			// get address from qrcode
 			const { label: addr } = await element(by.id('QRCode')).getAttributes();
 			// because we can't use Jest expect in Detox tests, let's just throw an error if there is one
-			if (!addr.startsWith('bitcoin:m')) {
-				throw new Error('Wrong receiving address');
+			if (!addr.startsWith('bitcoin:m') && !addr.startsWith('bitcoin:n')) {
+				throw new Error(`Wrong receiving address: ${addr}`);
 			}
 			await element(by.id('ReceiveScreen')).swipe('down'); // close Receive screen
 			await sleep(1000);

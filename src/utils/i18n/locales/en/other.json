@@ -33,7 +33,7 @@
 	"camera_no_text": "<bold>It appears Bitkit does not have permission to access your camera.</bold>\n\nTo utilize this feature in the future you will need to enable camera permissions for this app from your phones settings.",
 	"swipe": "Swipe To Confirm",
 	"scan_redirect_title": "Clipboard Data Detected",
-	"scan_redirect_msg": "Bitkit redirected you to the payment screen.",
+	"scan_redirect_msg": "Bitkit redirected you to the relevant screen.",
 	"scan_err_decoding": "Decoding Error",
 	"scan_err_interpret": "Unable To Interpret Provided Data",
 	"rate_error_title": "Blocktank FX API Error",
@@ -58,5 +58,15 @@
 	"lnurl_withdr_success_title": "Withdraw Requested",
 	"lnurl_withdr_success_msg": "LNURL Withdraw was successfully requested.",
 	"bt_error_retrieve": "Unable To Retrieve Order Information",
-	"earlier": "EARLIER"
+	"earlier": "EARLIER",
+	"update_title": "Update Available",
+	"update_text": "Please update Bitkit to the latest version for new features and bug fixes!",
+	"update_button": "Update",
+	"high_title": "High Wallet Balance (!)",
+	"high_text1": "Wallet balance exceeds",
+	"high_text2": "For safety reasons, we recommend moving some of your savings to an offline cold wallet or multisig solution.",
+	"high_text2_beta": "Please consider moving some of your funds. We recommend using only small amounts while Bitkit is in beta.",
+	"high_button_more": "Learn More",
+	"caution_header": "Caution:\n<yellow>Beta Risk.</yellow>",
+	"caution_text": "Beta software may put your money at risk. We recommend using only small amounts (like $10) while Bitkit is in beta."
 }

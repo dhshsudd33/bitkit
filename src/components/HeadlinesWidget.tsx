@@ -25,12 +25,14 @@ const HeadlinesWidget = ({
 	isEditing = false,
 	onLongPress,
 	onPressIn,
+	testID,
 }: {
 	url: string;
 	widget: IWidget;
 	isEditing?: boolean;
 	onLongPress?: () => void;
 	onPressIn?: () => void;
+	testID?: string;
 }): ReactElement => {
 	const { t } = useTranslation('slashtags');
 	const [showDialog, setShowDialog] = useState(false);
@@ -105,7 +107,8 @@ const HeadlinesWidget = ({
 					!isEditing && article?.link && Linking.openURL(article.link);
 				}}
 				onLongPress={onLongPress}
-				onPressIn={onPressIn}>
+				onPressIn={onPressIn}
+				testID={testID}>
 				<View style={styles.icon}>
 					{<NewspaperIcon width={32} height={32} />}
 				</View>
@@ -147,7 +150,7 @@ const HeadlinesWidget = ({
 			)}
 			<Dialog
 				visible={showDialog}
-				title={t('widget_delete_title', { name: t('widget_headlines') })}
+				title={t('widget_delete_title')}
 				description={t('widget_delete_desc', { name: t('widget_headlines') })}
 				confirmText={t('widget_delete_yes')}
 				onCancel={(): void => {

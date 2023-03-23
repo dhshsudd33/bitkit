@@ -23,6 +23,7 @@ export const FeedWidget = ({
 	name,
 	isEditing = false,
 	onLongPress,
+	testID,
 }: {
 	url: string;
 	widget: IWidget;
@@ -30,6 +31,7 @@ export const FeedWidget = ({
 	name?: string;
 	isEditing?: boolean;
 	onLongPress?: () => void;
+	testID?: string;
 }): ReactElement => {
 	const { value } = useFeedWidget({ url, feed: widget.feed });
 
@@ -37,7 +39,7 @@ export const FeedWidget = ({
 		<BaseFeedWidget
 			url={url}
 			name={name || widget.feed.name}
-			label={widget.feed.field.name}
+			label={widget.feed.field?.name}
 			isEditing={isEditing}
 			onLongPress={onLongPress}
 			right={<DefaultRightComponent value={value?.toString()} />}
@@ -51,6 +53,7 @@ export const FeedWidget = ({
 					/>
 				)
 			}
+			testID={testID}
 		/>
 	);
 };
@@ -65,6 +68,7 @@ export const BaseFeedWidget = ({
 	isEditing,
 	onLongPress,
 	onPressIn,
+	testID,
 }: {
 	url: string;
 	name?: string;
@@ -75,6 +79,7 @@ export const BaseFeedWidget = ({
 	isEditing?: boolean;
 	onLongPress?: () => void;
 	onPressIn?: () => void;
+	testID?: string;
 }): ReactElement => {
 	const { t } = useTranslation('slashtags');
 	const [showDialog, setShowDialog] = useState(false);
@@ -92,7 +97,8 @@ export const BaseFeedWidget = ({
 			style={styles.root}
 			activeOpacity={0.9}
 			onLongPress={onLongPress}
-			onPressIn={onPressIn}>
+			onPressIn={onPressIn}
+			testID={testID}>
 			<View style={styles.infoContainer}>
 				<View style={styles.icon}>{icon}</View>
 				<View style={styles.labelsContainer}>
@@ -128,7 +134,7 @@ export const BaseFeedWidget = ({
 
 			<Dialog
 				visible={showDialog}
-				title={t('widget_delete_title', { name })}
+				title={t('widget_delete_title')}
 				description={t('widget_delete_desc', { name })}
 				confirmText={t('widget_delete_yes')}
 				onCancel={(): void => {

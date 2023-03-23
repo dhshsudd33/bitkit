@@ -16,12 +16,13 @@
 	"save": "Save",
 	"done": "Done",
 	"delete": "Delete",
-	"ok": "Ok",
+	"ok": "OK",
 	"retry": "Retry",
 	"later": "Later",
 	"skip": "Skip",
 	"copied": "Copied to Clipboard",
 	"yes": "Yes",
 	"no": "No",
-	"back": "Back"
+	"back": "Back",
+	"understood": "Understood"
 }

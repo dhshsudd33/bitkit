@@ -24,6 +24,16 @@ export const addActivityItem = (
 	return ok('Activity Item Added.');
 };
 
+export const addActivityItems = (
+	activityItems: Array<IActivityItem>,
+): Result<string> => {
+	dispatch({
+		type: actions.ADD_ACTIVITY_ITEMS,
+		payload: activityItems,
+	});
+	return ok('Activity Item Added.');
+};
+
 /**
  * @param {string} id
  * @param {IActivityItem} newActivityItem
@@ -52,10 +62,9 @@ export const updateActivityList = (): Result<string> => {
  * @returns {Promise<Result<string>>}
  */
 export const updateOnChainActivityList = (): Result<string> => {
-	const { currentWallet, selectedNetwork, selectedWallet } = getCurrentWallet(
-		{},
-	);
+	const { currentWallet, selectedNetwork, selectedWallet } = getCurrentWallet();
 	const blocktankTransactions = getBlocktankStore().paidOrders;
+	const blocktankOrders = getBlocktankStore().orders;
 	const boostedTransactions =
 		currentWallet.boostedTransactions[selectedNetwork];
 
@@ -71,6 +80,7 @@ export const updateOnChainActivityList = (): Result<string> => {
 		return onChainTransactionToActivityItem({
 			transaction: tx,
 			blocktankTransactions,
+			blocktankOrders,
 		});
 	});
 

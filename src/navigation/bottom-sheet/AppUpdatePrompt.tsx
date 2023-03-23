@@ -1,22 +1,22 @@
 import React, { memo, ReactElement, useEffect, useMemo } from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { getBundleId } from 'react-native-device-info';
 import { DISABLE_PERIODIC_REMINDERS } from '@env';
+import { useTranslation } from 'react-i18next';
 
 import { Text01S } from '../../styles/text';
 import BottomSheetWrapper from '../../components/BottomSheetWrapper';
 import BottomSheetNavigationHeader from '../../components/BottomSheetNavigationHeader';
 import Button from '../../components/Button';
-import { ignoreAppUpdate } from '../../store/actions/user';
-import { showBottomSheet, closeBottomSheet } from '../../store/actions/ui';
 import GlowImage from '../../components/GlowImage';
 import { openURL } from '../../utils/helpers';
 import { objectKeys } from '../../utils/objectKeys';
 import { useAppSelector } from '../../hooks/redux';
+import { ignoreAppUpdate } from '../../store/actions/user';
+import { showBottomSheet, closeBottomSheet } from '../../store/actions/ui';
 import { ignoreAppUpdateTimestampSelector } from '../../store/reselect/user';
 import {
-	availableUpdateTypeSelector,
+	availableUpdateSelector,
 	viewControllersSelector,
 } from '../../store/reselect/ui';
 import {
@@ -26,22 +26,15 @@ import {
 
 const imageSrc = require('../../assets/illustrations/bitkit-logo.png');
 
-// TODO: add correct store IDs and test
-// const appleAppID = '1634634088';
-const androidPackageName = getBundleId();
-const appStoreUrl =
-	Platform.OS === 'ios'
-		? 'https://testflight.apple.com/join/lGXhnwcC'
-		: `https://play.google.com/store/apps/details?id=${androidPackageName}`;
-
 const ASK_INTERVAL = 1000 * 60 * 60 * 12; // 12h - how long this prompt will be hidden if user taps Later
 const CHECK_DELAY = 2500; // how long user needs to stay on Wallets screen before he will see this prompt
 
 const AppUpdatePrompt = ({ enabled }: { enabled: boolean }): ReactElement => {
+	const { t } = useTranslation('other');
 	const snapPoints = useSnapPoints('large');
 	const insets = useSafeAreaInsets();
 	const viewControllers = useAppSelector(viewControllersSelector);
-	const updateType = useAppSelector(availableUpdateTypeSelector);
+	const updateInfo = useAppSelector(availableUpdateSelector);
 	const ignoreTimestamp = useAppSelector(ignoreAppUpdateTimestampSelector);
 
 	useBottomSheetBackPress('appUpdatePrompt');
@@ -70,11 +63,11 @@ const AppUpdatePrompt = ({ enabled }: { enabled: boolean }): ReactElement => {
 		return (
 			enabled &&
 			DISABLE_PERIODIC_REMINDERS !== 'true' &&
-			updateType === 'optional' &&
+			!updateInfo?.critical &&
 			isTimeoutOver &&
 			!anyBottomSheetIsOpen
 		);
-	}, [enabled, updateType, ignoreTimestamp, anyBottomSheetIsOpen]);
+	}, [enabled, updateInfo?.critical, ignoreTimestamp, anyBottomSheetIsOpen]);
 
 	useEffect(() => {
 		if (!shouldShowBottomSheet) {
@@ -97,7 +90,7 @@ const AppUpdatePrompt = ({ enabled }: { enabled: boolean }): ReactElement => {
 
 	const onUpdate = async (): Promise<void> => {
 		ignoreAppUpdate();
-		await openURL(appStoreUrl);
+		await openURL(updateInfo?.url!);
 		closeBottomSheet('appUpdatePrompt');
 	};
 
@@ -109,13 +102,10 @@ const AppUpdatePrompt = ({ enabled }: { enabled: boolean }): ReactElement => {
 			onClose={ignoreAppUpdate}>
 			<View style={styles.root}>
 				<BottomSheetNavigationHeader
-					title="Update Available"
+					title={t('update_title')}
 					displayBackButton={false}
 				/>
-				<Text01S color="gray1">
-					Please update Bitkit to the latest version for new features and bug
-					fixes!
-				</Text01S>
+				<Text01S color="gray1">{t('update_text')}</Text01S>
 
 				<GlowImage image={imageSrc} />
 
@@ -124,14 +114,14 @@ const AppUpdatePrompt = ({ enabled }: { enabled: boolean }): ReactElement => {
 						style={styles.button}
 						variant="secondary"
 						size="large"
-						text="Cancel"
+						text={t('cancel')}
 						onPress={onCancel}
 					/>
 					<View style={styles.divider} />
 					<Button
 						style={styles.button}
 						size="large"
-						text="Update"
+						text={t('update_button')}
 						onPress={onUpdate}
 					/>
 				</View>
