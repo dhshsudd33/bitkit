@@ -85,6 +85,17 @@ const migrations = {
 			checks: defaultChecksShape,
 		};
 	},
+	10: (state): PersistedState => {
+		return {
+			...state,
+			ui: {
+				...state.ui,
+				viewControllers: defaultViewControllers,
+				timeZone: 'UTC',
+				language: 'en',
+			},
+		};
+	},
 };
 
 export default migrations;
