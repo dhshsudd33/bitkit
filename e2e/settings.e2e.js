@@ -362,6 +362,7 @@ describe('Settings', () => {
 			await element(by.id('Settings')).tap();
 			await element(by.id('AdvancedSettings')).tap();
 			await element(by.id('AddressViewer')).tap();
+			await sleep(1000);
 			await waitFor(element(by.id('Address-0')))
 				.toBeVisible()
 				.withTimeout(30000);
@@ -386,6 +387,7 @@ describe('Settings', () => {
 
 			// check address in Address Viewer
 			await element(by.id('AddressViewer')).tap();
+			await sleep(1000);
 			await waitFor(element(by.id('Address-0')))
 				.toBeVisible()
 				.withTimeout(30000);
@@ -441,7 +443,9 @@ describe('Settings', () => {
 			await element(by.id('NavigationBack')).tap();
 
 			await element(by.id('LightningNodeInfo')).tap();
-			await expect(element(by.id('LDKNodeID'))).toBeVisible();
+			await waitFor(element(by.id('LDKNodeID')))
+				.toBeVisible()
+				.withTimeout(10000);
 			await element(by.id('NavigationBack')).tap();
 			await element(by.id('NavigationBack')).tap();
 			await element(by.id('DevOptions')).multiTap(5); // disable dev mode
